@@ -16,7 +16,7 @@ namespace Melton
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Startmenu());
+            Application.Run(new Game());
         }
     }
 }
