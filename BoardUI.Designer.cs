@@ -33,17 +33,19 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 12);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 23);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(895, 1078);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1790, 2073);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // BoardUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 883);
+            this.ClientSize = new System.Drawing.Size(1830, 1583);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "BoardUI";
             this.Text = "BoardUI";
             this.ResumeLayout(false);
