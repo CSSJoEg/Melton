@@ -32,10 +32,6 @@ namespace Melton
         public void btn_Click(object sender, EventArgs e)
         {
             Button btnPos = (Button)sender;
-            if (btnPos.Tag == "")
-            {
-
-            }
         }
     }
 }
