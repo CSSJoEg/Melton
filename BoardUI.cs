@@ -14,8 +14,7 @@ namespace Melton
 {
     public partial class BoardUI : Form
     {
-        Eigenschaften eigenschaften;
-        Game game = (Game)Application.OpenForms["game"];
+        Eigenschaften eigenschaften = (Eigenschaften)Application.OpenForms["eigenschaften"];
         public Form parent { get; set; }
         public BoardUI(Form mdiParent)
         {
@@ -42,13 +41,14 @@ namespace Melton
             eigenschaften = new Eigenschaften();
             eigenschaften.MdiParent = parent;
             eigenschaften.Show();
+            eigenschaften.Location = new Point(this.Location.X + 655, this.Location.Y);
         }
 
         public void BoardUI_LocationChanged(object sender, EventArgs e)
         {
-            if(eigenschaften != null)
+            if (eigenschaften != null)
             {
-                eigenschaften.Location = this.Location;
+                eigenschaften.Location = new Point(this.Location.X + 655, this.Location.Y);
             }
         }
     }

@@ -37,7 +37,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Melton.Properties.Resources.mage;
-            this.pictureBox2.Location = new System.Drawing.Point(167, 38);
+            this.pictureBox2.Location = new System.Drawing.Point(165, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(593, 684);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -56,7 +56,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(923, 1581);
+            this.ClientSize = new System.Drawing.Size(923, 1559);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Eigenschaften";
