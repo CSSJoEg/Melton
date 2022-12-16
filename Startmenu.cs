@@ -13,6 +13,7 @@ namespace Melton
     public partial class Startmenu : Form
     {
         BoardUI Board;
+        Game game = (Game)Application.OpenForms["game"];
 
         public Form parent { get; set; }
 
@@ -31,7 +32,7 @@ namespace Melton
             Board.MdiParent = parent;
             Board.Show();
         }
-        private void exit_Click(object sender, EventArgs e)
+        private void exit_MouseClick(object sender, MouseEventArgs e)
         {
             this.Close();
         }

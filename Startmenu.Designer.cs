@@ -45,7 +45,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(500, 456);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 39);
+            this.label1.Size = new System.Drawing.Size(240, 79);
             this.label1.TabIndex = 1;
             this.label1.Text = "Melton";
             // 
@@ -56,7 +56,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(400, 535);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(208, 20);
+            this.label2.Size = new System.Drawing.Size(417, 37);
             this.label2.TabIndex = 2;
             this.label2.Text = "Rougelike / Dungeoncrawler";
             // 
@@ -96,6 +96,7 @@
             this.exit.TabIndex = 6;
             this.exit.Text = "Exit";
             this.exit.UseVisualStyleBackColor = true;
+            this.exit.MouseClick += new System.Windows.Forms.MouseEventHandler(this.exit_MouseClick);
             // 
             // pictureBox1
             // 
