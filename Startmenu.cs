@@ -28,30 +28,13 @@ namespace Melton
         }
         private void start_btn_Click(object sender, EventArgs e)
         {
-            Board = new BoardUI();
+            Board = new BoardUI(parent);
             Board.MdiParent = parent;
             Board.Show();
         }
         private void exit_MouseClick(object sender, MouseEventArgs e)
         {
             this.Close();
-        }
-
-        private void Startmenu_Resize(object sender, EventArgs e)
-        {
-            if (Board != null)
-            {
-                Board.BackColor = Color.Red;
-            }
-
-            //foreach (Form f in parent.MdiChildren)
-            //{
-            //    if (f is BoardUI)
-            //    {
-            //        f.Location = this.Location;
-            //        break;
-            //    }
-            //}
         }
     }
 }

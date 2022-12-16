@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Melton.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +14,16 @@ namespace Melton
 {
     public partial class BoardUI : Form
     {
-        public BoardUI()
+        Eigenschaften eigenschaften;
+        Game game = (Game)Application.OpenForms["game"];
+        public Form parent { get; set; }
+        public BoardUI(Form mdiParent)
         {
             InitializeComponent();
             ButtonArray();
+            Bitmap background = new Bitmap(@"C:\Users\ajira\source\repos\Melton\Melton\Resources\background.png");
+            flowLayoutPanel1.BackgroundImage = background;
+            parent = mdiParent;
         }
         public void ButtonArray()
         {
@@ -32,6 +39,17 @@ namespace Melton
         public void btn_Click(object sender, EventArgs e)
         {
             Button btnPos = (Button)sender;
+            eigenschaften = new Eigenschaften();
+            eigenschaften.MdiParent = parent;
+            eigenschaften.Show();
+        }
+
+        public void BoardUI_LocationChanged(object sender, EventArgs e)
+        {
+            if(eigenschaften != null)
+            {
+                eigenschaften.Location = this.Location;
+            }
         }
     }
 }
