@@ -54,6 +54,12 @@
       <DependentUpon>BoardUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Boss.cs" />
+    <Compile Include="Characters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Characters.Designer.cs">
+      <DependentUpon>Characters.cs</DependentUpon>
+    </Compile>
     <Compile Include="Eigenschaften.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,12 @@
     <Compile Include="Players.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Startmenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +107,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Startmenu.resx">
       <DependentUpon>Startmenu.cs</DependentUpon>
     </EmbeddedResource>

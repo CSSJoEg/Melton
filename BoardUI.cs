@@ -15,7 +15,7 @@ namespace Melton
 {
     public partial class BoardUI : Form
     {
-        Eigenschaften eigenschaften = (Eigenschaften)Application.OpenForms["eigenschaften"];
+        Eigenschaften eigenschaften;
         public Form parent { get; set; }
         public BoardUI(Form mdiParent)
         {
