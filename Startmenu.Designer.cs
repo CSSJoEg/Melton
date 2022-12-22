@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Startmenu));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.start_btn = new System.Windows.Forms.Button();
             this.btn_character = new System.Windows.Forms.Button();
             this.btn_Settings = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -129,6 +131,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Startmenu";
             this.Text = "Startmenu";
@@ -147,5 +150,6 @@
         private System.Windows.Forms.Button btn_character;
         private System.Windows.Forms.Button btn_Settings;
         private System.Windows.Forms.Button exit;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
