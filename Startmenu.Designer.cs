@@ -35,7 +35,6 @@
             this.btn_character = new System.Windows.Forms.Button();
             this.btn_Settings = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -150,6 +149,5 @@
         private System.Windows.Forms.Button btn_character;
         private System.Windows.Forms.Button btn_Settings;
         private System.Windows.Forms.Button exit;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
