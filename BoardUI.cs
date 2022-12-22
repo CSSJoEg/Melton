@@ -16,6 +16,7 @@ namespace Melton
     public partial class BoardUI : Form
     {
         Eigenschaften eigenschaften;
+        Actions action;
         public Form parent { get; set; }
         public BoardUI(Form mdiParent)
         {
@@ -35,7 +36,6 @@ namespace Melton
                 btn.BackColor= Color.Black;
                 btn.Size = new Size(80, 80);
                 btn.ForeColor= Color.Black;
-                
                 btn.Text = i.ToString();
                 btn.Click += btn_Click;
                 flowLayoutPanel1.Controls.Add(btn);

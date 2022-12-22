@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Actions.Designer.cs">
+      <DependentUpon>Actions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Basisklasse.cs" />
     <Compile Include="BoardUI.cs">
       <SubType>Form</SubType>
@@ -88,6 +94,9 @@
     <Compile Include="Startmenu.Designer.cs">
       <DependentUpon>Startmenu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Actions.resx">
+      <DependentUpon>Actions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BoardUI.resx">
       <DependentUpon>BoardUI.cs</DependentUpon>
     </EmbeddedResource>
