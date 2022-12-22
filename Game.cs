@@ -20,5 +20,7 @@ namespace Melton
             Menu.MdiParent = this;
             Menu.Show();
         }
+
+ 
     }
 }

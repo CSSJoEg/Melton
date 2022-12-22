@@ -122,7 +122,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Startmenu";
             this.Text = "Startmenu";
-            this.LocationChanged += new System.EventHandler(this.Startmenu_LocationChanged);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

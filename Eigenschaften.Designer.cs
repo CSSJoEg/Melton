@@ -37,28 +37,31 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Melton.Properties.Resources.mage;
-            this.pictureBox2.Location = new System.Drawing.Point(165, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(82, 6);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(593, 684);
+            this.pictureBox2.Size = new System.Drawing.Size(296, 356);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(886, 1209);
+            this.pictureBox1.Size = new System.Drawing.Size(443, 629);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // Eigenschaften
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(923, 1559);
+            this.ClientSize = new System.Drawing.Size(462, 776);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Eigenschaften";
             this.Text = "Eigenschaften";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
