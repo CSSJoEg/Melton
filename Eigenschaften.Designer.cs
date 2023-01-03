@@ -33,13 +33,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.HP_label = new System.Windows.Forms.Label();
+            this.MP_label = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.ATK_label = new System.Windows.Forms.Label();
+            this.Dodge_label = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.ATS_label = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -88,25 +88,25 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "MP";
             // 
-            // label4
+            // HP_label
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(218, 527);
-            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 25);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "label4";
+            this.HP_label.AutoSize = true;
+            this.HP_label.Location = new System.Drawing.Point(217, 528);
+            this.HP_label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.HP_label.Name = "HP_label";
+            this.HP_label.Size = new System.Drawing.Size(99, 25);
+            this.HP_label.TabIndex = 6;
+            this.HP_label.Text = "HP_label";
             // 
-            // label5
+            // MP_label
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(430, 527);
-            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 25);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "label5";
+            this.MP_label.AutoSize = true;
+            this.MP_label.Location = new System.Drawing.Point(430, 527);
+            this.MP_label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.MP_label.Name = "MP_label";
+            this.MP_label.Size = new System.Drawing.Size(204, 50);
+            this.MP_label.TabIndex = 7;
+            this.MP_label.Text = "MP_label";
             // 
             // label6
             // 
@@ -119,25 +119,25 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "ATK";
             // 
-            // label7
+            // ATK_label
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(628, 527);
-            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 25);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "label7";
+            this.ATK_label.AutoSize = true;
+            this.ATK_label.Location = new System.Drawing.Point(628, 527);
+            this.ATK_label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.ATK_label.Name = "ATK_label";
+            this.ATK_label.Size = new System.Drawing.Size(222, 50);
+            this.ATK_label.TabIndex = 9;
+            this.ATK_label.Text = "ATK_label";
             // 
-            // label8
+            // Dodge_label
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(525, 593);
-            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 25);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "label8";
+            this.Dodge_label.AutoSize = true;
+            this.Dodge_label.Location = new System.Drawing.Point(525, 593);
+            this.Dodge_label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Dodge_label.Name = "Dodge_label";
+            this.Dodge_label.Size = new System.Drawing.Size(266, 50);
+            this.Dodge_label.TabIndex = 15;
+            this.Dodge_label.Text = "Dodge_label";
             // 
             // label9
             // 
@@ -150,15 +150,15 @@
             this.label9.TabIndex = 14;
             this.label9.Text = "Dodge";
             // 
-            // label11
+            // ATS_label
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(300, 594);
-            this.label11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(82, 25);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "label11";
+            this.ATS_label.AutoSize = true;
+            this.ATS_label.Location = new System.Drawing.Point(300, 594);
+            this.ATS_label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.ATS_label.Name = "ATS_label";
+            this.ATS_label.Size = new System.Drawing.Size(222, 50);
+            this.ATS_label.TabIndex = 12;
+            this.ATS_label.Text = "ATS_label";
             // 
             // label13
             // 
@@ -198,14 +198,14 @@
             this.ClientSize = new System.Drawing.Size(924, 1492);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.Dodge_label);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.ATS_label);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.ATK_label);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.MP_label);
+            this.Controls.Add(this.HP_label);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -214,6 +214,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Eigenschaften";
             this.Text = "Eigenschaften";
+            this.Load += new System.EventHandler(this.Eigenschaften_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -226,13 +227,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label HP_label;
+        private System.Windows.Forms.Label MP_label;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label ATK_label;
+        private System.Windows.Forms.Label Dodge_label;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label ATS_label;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label14;

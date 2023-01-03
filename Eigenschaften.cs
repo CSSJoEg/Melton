@@ -13,10 +13,20 @@ namespace Melton
 {
     public partial class Eigenschaften : Form
     {
-        public Eigenschaften()
+        BoardUI board;
+        Warrior warrior;
+        public Eigenschaften(BoardUI form)
         {
             InitializeComponent();  
-            if(boardUI.Position)
+            board= form;
+        }
+
+        private void Eigenschaften_Load(object sender, EventArgs e)
+        {
+            if (board.positionname.Contains("Warrior"))
+            {
+                HP_label.Text = Convert.ToString(warrior.Health);
+            }
         }
     }
 }

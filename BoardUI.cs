@@ -16,15 +16,21 @@ namespace Melton
     public partial class BoardUI : Form
     {
         Game game = (Game)Application.OpenForms["game"];
-        Eigenschaften eigenschaften = new Eigenschaften();
+        Eigenschaften eigenschaften;
         Actions action = new Actions();
         Button btn = new Button();
         public Form parent { get; set; }
-        public string Position { get; set; }
+        string name;
+        public string positionname
+        {
+            get { return name; }
+            set { name = value; }
+        }
         public BoardUI(Form mdiParent)
         {
             InitializeComponent();
             ButtonArray();
+            eigenschaften = new Eigenschaften(this);
             flowLayoutPanel1.BackgroundImage = Properties.Resources.background;
             parent = mdiParent;
             StartPosition = FormStartPosition.CenterScreen;
@@ -81,7 +87,6 @@ namespace Melton
             players.Add(Jaeger);
             players.Add(Magier);
             players.Add(Schamane);
-
         }
         public void ButtonArray()
         {
@@ -130,7 +135,7 @@ namespace Melton
         public void btn_Click(object sender, EventArgs e)
         {
             Button btnPos = (Button)sender;
-            Position = btnPos.Text;
+            positionname = btnPos.Name;
             if (btnPos.Name.Contains("player") || btnPos.Name.Contains("boss"))
             {
                 eigenschaften.MdiParent = parent;
@@ -154,7 +159,6 @@ namespace Melton
                 action.Location = new Point(this.Location.X, this.Location.Y + 813);
             }
         }
-
         private void BoardUI_FormClosed(object sender, FormClosedEventArgs e)
         {
             Startmenu Menu = new Startmenu(game);
