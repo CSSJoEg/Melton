@@ -15,7 +15,8 @@ namespace Melton
     {
         public Eigenschaften()
         {
-            InitializeComponent();
+            InitializeComponent();  
+            if(boardUI.Position)
         }
     }
 }

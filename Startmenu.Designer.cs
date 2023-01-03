@@ -44,10 +44,10 @@
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(250, 237);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(500, 456);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 39);
+            this.label1.Size = new System.Drawing.Size(240, 79);
             this.label1.TabIndex = 1;
             this.label1.Text = "Melton";
             // 
@@ -56,19 +56,19 @@
             this.label2.AutoSize = true;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(200, 278);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(400, 535);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(208, 20);
+            this.label2.Size = new System.Drawing.Size(417, 37);
             this.label2.TabIndex = 2;
             this.label2.Text = "Rougelike / Dungeoncrawler";
             // 
             // start_btn
             // 
-            this.start_btn.Location = new System.Drawing.Point(108, 318);
-            this.start_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.start_btn.Location = new System.Drawing.Point(216, 612);
+            this.start_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.start_btn.Name = "start_btn";
-            this.start_btn.Size = new System.Drawing.Size(176, 99);
+            this.start_btn.Size = new System.Drawing.Size(352, 190);
             this.start_btn.TabIndex = 3;
             this.start_btn.Text = "Start Game";
             this.start_btn.UseVisualStyleBackColor = true;
@@ -76,10 +76,10 @@
             // 
             // btn_character
             // 
-            this.btn_character.Location = new System.Drawing.Point(313, 318);
-            this.btn_character.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_character.Location = new System.Drawing.Point(626, 612);
+            this.btn_character.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_character.Name = "btn_character";
-            this.btn_character.Size = new System.Drawing.Size(176, 99);
+            this.btn_character.Size = new System.Drawing.Size(352, 190);
             this.btn_character.TabIndex = 4;
             this.btn_character.Text = "Characters";
             this.btn_character.UseVisualStyleBackColor = true;
@@ -87,10 +87,10 @@
             // 
             // btn_Settings
             // 
-            this.btn_Settings.Location = new System.Drawing.Point(108, 435);
-            this.btn_Settings.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Settings.Location = new System.Drawing.Point(216, 837);
+            this.btn_Settings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Settings.Name = "btn_Settings";
-            this.btn_Settings.Size = new System.Drawing.Size(176, 99);
+            this.btn_Settings.Size = new System.Drawing.Size(352, 190);
             this.btn_Settings.TabIndex = 5;
             this.btn_Settings.Text = "Settings";
             this.btn_Settings.UseVisualStyleBackColor = true;
@@ -98,10 +98,10 @@
             // 
             // exit
             // 
-            this.exit.Location = new System.Drawing.Point(313, 435);
-            this.exit.Margin = new System.Windows.Forms.Padding(2);
+            this.exit.Location = new System.Drawing.Point(626, 837);
+            this.exit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(176, 99);
+            this.exit.Size = new System.Drawing.Size(352, 190);
             this.exit.TabIndex = 6;
             this.exit.Text = "Exit";
             this.exit.UseVisualStyleBackColor = true;
@@ -109,20 +109,20 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Melton.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(204, 28);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(408, 54);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 208);
+            this.pictureBox1.Size = new System.Drawing.Size(400, 400);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // Startmenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 552);
+            this.ClientSize = new System.Drawing.Size(1204, 1062);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.btn_Settings);
             this.Controls.Add(this.btn_character);
@@ -131,7 +131,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Startmenu";
             this.Text = "Startmenu";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

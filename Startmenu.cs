@@ -22,7 +22,7 @@ namespace Melton
         public Startmenu(Form mdiParent)
         {
             InitializeComponent();
-            this.Location = new Point(0, 0);
+            StartPosition = FormStartPosition.CenterScreen;
             System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
             gp.AddEllipse(0, 0, pictureBox1.Width - 3, pictureBox1.Height - 3);
             Region rg = new Region(gp);
@@ -38,7 +38,7 @@ namespace Melton
         }
         private void exit_MouseClick(object sender, MouseEventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
         private void btn_character_Click(object sender, EventArgs e)
