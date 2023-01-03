@@ -18,7 +18,6 @@ namespace Melton
     public interface IManaCreature
     {
         int Mana { get; set; }
-
     }
     public interface IRangedCreature
     {

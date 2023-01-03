@@ -14,7 +14,7 @@ namespace Melton
     public partial class Eigenschaften : Form
     {
         BoardUI board;
-        Warrior warrior;
+        Warrior warrior = new Warrior();
         public Eigenschaften(BoardUI form)
         {
             InitializeComponent();  
@@ -25,7 +25,21 @@ namespace Melton
         {
             if (board.positionname.Contains("Warrior"))
             {
-                HP_label.Text = Convert.ToString(warrior.Health);
+                classpicture.BackgroundImage = Properties.Resources.Warrior;
+                classpicture.BackgroundImageLayout = ImageLayout.Stretch;
+                class_label.Text = "Krieger";
+                HP_label.Text = Convert.ToString(board.Krieger.Health);
+                MP_label.Text = "0";
+                ATK_label.Text = Convert.ToString(board.Krieger.Attack);
+                special_label.Text = Convert.ToString(board.Krieger.DodgeValue);
+            }
+            if(board.positionname.Contains("Hunter"))
+            {
+                classpicture.BackgroundImage = Properties.Resources.Hunter;
+                HP_label.Text = Convert.ToString(board.Jaeger.Health);
+                MP_label.Text = Convert.ToString(board.Jaeger.Energy);
+                ATK_label.Text = Convert.ToString(board.Jaeger.Attack);
+                special_label.Text = Convert.ToString(board.Jaeger.AttackSpeed);
             }
         }
     }

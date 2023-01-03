@@ -19,12 +19,42 @@ namespace Melton
         Eigenschaften eigenschaften;
         Actions action = new Actions();
         Button btn = new Button();
-        public Form parent { get; set; }
         string name;
+        Boss evilboss;
+        Warrior krieger;
+        Hunter hunter;
+        Mage magier;
+        Shaman schamane;
+        public Form parent { get; set; }
         public string positionname
         {
             get { return name; }
             set { name = value; }
+        }
+        public Boss EvilBoss
+        {
+            get { return evilboss; }
+            set { evilboss = value; }
+        }
+        public Warrior Krieger
+        {
+            get { return krieger; }
+            set { krieger = value; }
+        }
+        public Hunter Jaeger
+        {
+            get { return hunter; }
+            set { hunter = value; }
+        }
+        public Mage Magier
+        {
+            get { return magier; }
+            set { magier = value; }
+        }
+        public Shaman Schamane
+        {
+            get { return schamane; }
+            set { schamane = value; }
         }
         public BoardUI(Form mdiParent)
         {
@@ -36,7 +66,7 @@ namespace Melton
             StartPosition = FormStartPosition.CenterScreen;
             eigenschaften.Hide();
             action.Hide();
-            Boss EvilBoss = new Boss()
+            Boss EvilBoss1 = new Boss()
             {
                 Attack = 40,
                 AOE = 20,
@@ -45,7 +75,8 @@ namespace Melton
                 MaxHealth = 500,
                 Name = "Boss"
             };
-            Warrior Krieger = new Warrior()
+            EvilBoss = EvilBoss1;
+            Warrior Krieger1 = new Warrior()
             {
                 Attack = 20,
                 DodgeValue = 0.2F,
@@ -53,7 +84,8 @@ namespace Melton
                 MaxHealth = 100,
                 Name = "Krieger"
             };
-            Hunter Jaeger = new Hunter()
+            Krieger = Krieger1;
+            Hunter Jaeger1 = new Hunter()
             {
                 Attack = 30,
                 AttackSpeed = 0.2F,
@@ -62,7 +94,8 @@ namespace Melton
                 MaxHealth = 60,
                 Name = "Jäger"
             };
-            Mage Magier = new Mage()
+            Jaeger = Jaeger1;
+            Mage Magier1 = new Mage()
             {
                 Attack = 50,
                 AttackSpeed = 0.6F,
@@ -71,7 +104,8 @@ namespace Melton
                 MaxHealth = 60,
                 Name = "Magier"
             };
-            Shaman Schamane = new Shaman()
+            Magier = Magier1;
+            Shaman Schamane1 = new Shaman()
             {
                 Attack = 10,
                 AttackSpeed = 0.4F,
@@ -81,12 +115,13 @@ namespace Melton
                 MaxHealth = 80,
                 Name = "Schamane"
             };
+            Schamane = Schamane1;
             List<MeltonCreature> players = new List<MeltonCreature>()
            ;
-            players.Add(Krieger);
-            players.Add(Jaeger);
-            players.Add(Magier);
-            players.Add(Schamane);
+            players.Add(Krieger1);
+            players.Add(Jaeger1);
+            players.Add(Magier1);
+            players.Add(Schamane1);
         }
         public void ButtonArray()
         {
@@ -161,6 +196,8 @@ namespace Melton
         }
         private void BoardUI_FormClosed(object sender, FormClosedEventArgs e)
         {
+            eigenschaften.Close();
+            action.Close();
             Startmenu Menu = new Startmenu(game);
             Menu.MdiParent = game;
             Menu.Show();

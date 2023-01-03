@@ -29,42 +29,40 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Eigenschaften));
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.classpicture = new System.Windows.Forms.PictureBox();
+            this.class_label = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.HP_label = new System.Windows.Forms.Label();
             this.MP_label = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.ATK_label = new System.Windows.Forms.Label();
-            this.Dodge_label = new System.Windows.Forms.Label();
+            this.special_label = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.ATS_label = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classpicture)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox2
+            // classpicture
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(246, 23);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(406, 406);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.classpicture.Location = new System.Drawing.Point(246, 23);
+            this.classpicture.Margin = new System.Windows.Forms.Padding(6);
+            this.classpicture.Name = "classpicture";
+            this.classpicture.Size = new System.Drawing.Size(406, 406);
+            this.classpicture.TabIndex = 2;
+            this.classpicture.TabStop = false;
             // 
-            // label1
+            // class_label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(388, 435);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 37);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Klasse";
+            this.class_label.AutoSize = true;
+            this.class_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.class_label.Location = new System.Drawing.Point(388, 435);
+            this.class_label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.class_label.Name = "class_label";
+            this.class_label.Size = new System.Drawing.Size(112, 37);
+            this.class_label.TabIndex = 3;
+            this.class_label.Text = "Klasse";
             // 
             // label2
             // 
@@ -104,7 +102,7 @@
             this.MP_label.Location = new System.Drawing.Point(430, 527);
             this.MP_label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.MP_label.Name = "MP_label";
-            this.MP_label.Size = new System.Drawing.Size(204, 50);
+            this.MP_label.Size = new System.Drawing.Size(102, 25);
             this.MP_label.TabIndex = 7;
             this.MP_label.Text = "MP_label";
             // 
@@ -125,51 +123,30 @@
             this.ATK_label.Location = new System.Drawing.Point(628, 527);
             this.ATK_label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.ATK_label.Name = "ATK_label";
-            this.ATK_label.Size = new System.Drawing.Size(222, 50);
+            this.ATK_label.Size = new System.Drawing.Size(111, 25);
             this.ATK_label.TabIndex = 9;
             this.ATK_label.Text = "ATK_label";
             // 
-            // Dodge_label
+            // special_label
             // 
-            this.Dodge_label.AutoSize = true;
-            this.Dodge_label.Location = new System.Drawing.Point(525, 593);
-            this.Dodge_label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Dodge_label.Name = "Dodge_label";
-            this.Dodge_label.Size = new System.Drawing.Size(266, 50);
-            this.Dodge_label.TabIndex = 15;
-            this.Dodge_label.Text = "Dodge_label";
+            this.special_label.AutoSize = true;
+            this.special_label.Location = new System.Drawing.Point(448, 593);
+            this.special_label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.special_label.Name = "special_label";
+            this.special_label.Size = new System.Drawing.Size(138, 25);
+            this.special_label.TabIndex = 15;
+            this.special_label.Text = "special_label";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(452, 592);
+            this.label9.Location = new System.Drawing.Point(296, 593);
             this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 26);
+            this.label9.Size = new System.Drawing.Size(140, 26);
             this.label9.TabIndex = 14;
-            this.label9.Text = "Dodge";
-            // 
-            // ATS_label
-            // 
-            this.ATS_label.AutoSize = true;
-            this.ATS_label.Location = new System.Drawing.Point(300, 594);
-            this.ATS_label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.ATS_label.Name = "ATS_label";
-            this.ATS_label.Size = new System.Drawing.Size(222, 50);
-            this.ATS_label.TabIndex = 12;
-            this.ATS_label.Text = "ATS_label";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(241, 594);
-            this.label13.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(54, 26);
-            this.label13.TabIndex = 10;
-            this.label13.Text = "ATS";
+            this.label9.Text = "SpecialValue";
             // 
             // textBox1
             // 
@@ -198,24 +175,22 @@
             this.ClientSize = new System.Drawing.Size(924, 1492);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.Dodge_label);
+            this.Controls.Add(this.special_label);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.ATS_label);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.ATK_label);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.MP_label);
             this.Controls.Add(this.HP_label);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.class_label);
+            this.Controls.Add(this.classpicture);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Eigenschaften";
             this.Text = "Eigenschaften";
             this.Load += new System.EventHandler(this.Eigenschaften_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classpicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,18 +198,16 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox classpicture;
+        private System.Windows.Forms.Label class_label;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label HP_label;
         private System.Windows.Forms.Label MP_label;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label ATK_label;
-        private System.Windows.Forms.Label Dodge_label;
+        private System.Windows.Forms.Label special_label;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label ATS_label;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label14;
     }
