@@ -60,11 +60,12 @@ namespace Melton
         {
             InitializeComponent();
             ButtonArray();
-            eigenschaften = new Eigenschaften(this);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             flowLayoutPanel1.BackgroundImage = Properties.Resources.background;
             parent = mdiParent;
             StartPosition = FormStartPosition.CenterScreen;
-            eigenschaften.Hide();
             action.Hide();
             Boss EvilBoss1 = new Boss()
             {
@@ -129,42 +130,38 @@ namespace Melton
             {
                 btn = new Button();
                 btn.FlatStyle = FlatStyle.Flat;
-                btn.BackColor= Color.Black;
+                btn.BackColor= Color.Transparent;
                 btn.Size = new Size(80, 80);
-                btn.ForeColor= Color.Black;
-                btn.Text = i.ToString();
+                btn.ForeColor = Color.Black;
+                btn.Tag = (int)i;
                 btn.Click += btn_Click;
                 flowLayoutPanel1.Controls.Add(btn);
-                if (btn.Text == "22")
+                if ((int)btn.Tag == 22)
                 {
                     btn.BackgroundImage = Properties.Resources.Boss;
-                    btn.BackgroundImageLayout = ImageLayout.Stretch;
                     btn.Name = "boss";
                 }
-                if (btn.Text == "56")
+                if ((int)btn.Tag == 56)
                 {
                     btn.BackgroundImage = Properties.Resources.Warrior;
-                    btn.BackgroundImageLayout = ImageLayout.Stretch;
                     btn.Name = "player.Warrior";
                 }
-                if (btn.Text == "57")
+                if ((int)btn.Tag == 57)
                 {
                     btn.BackgroundImage = Properties.Resources.Mage;
-                    btn.BackgroundImageLayout = ImageLayout.Stretch;
                     btn.Name = "player.Mage";
                 }
-                if (btn.Text == "59")
+                if ((int) btn.Tag == 59)
                 {
                     btn.BackgroundImage = Properties.Resources.Hunter;
-                    btn.BackgroundImageLayout = ImageLayout.Stretch;
                     btn.Name = "player.Hunter";
                 }
-                if (btn.Text == "60")
+                if ((int) btn.Tag == 60)
                 {
                     btn.BackgroundImage = Properties.Resources.Druid;
-                    btn.BackgroundImageLayout = ImageLayout.Stretch;
                     btn.Name = "player.Shaman";
                 }
+                btn.BackgroundImageLayout = ImageLayout.Stretch;
             }
         }
         public void btn_Click(object sender, EventArgs e)
@@ -173,17 +170,29 @@ namespace Melton
             positionname = btnPos.Name;
             if (btnPos.Name.Contains("player") || btnPos.Name.Contains("boss"))
             {
+                
+                if(eigenschaften != null)
+                {
+                    eigenschaften.Close();
+                }
+                
+                eigenschaften = new Eigenschaften(this);
                 eigenschaften.MdiParent = parent;
                 action.MdiParent = parent;
-                action.Show();
+              
                 eigenschaften.Show();
+                action.Show();
+
                 action.Location = new Point(this.Location.X, this.Location.Y + 813);
                 eigenschaften.Location = new Point(this.Location.X + 796, this.Location.Y);
+
+
             }
             else
             {
                 action.Hide();
-                eigenschaften.Hide();
+                if (eigenschaften != null)
+                    eigenschaften.Hide();
             }
         }
         public void BoardUI_LocationChanged(object sender, EventArgs e)
@@ -196,8 +205,15 @@ namespace Melton
         }
         private void BoardUI_FormClosed(object sender, FormClosedEventArgs e)
         {
-            eigenschaften.Close();
-            action.Close();
+            if(eigenschaften != null)
+            {
+                eigenschaften.Close();
+                
+            }
+            if(action != null)
+            {
+                action.Close();
+            }
             Startmenu Menu = new Startmenu(game);
             Menu.MdiParent = game;
             Menu.Show();

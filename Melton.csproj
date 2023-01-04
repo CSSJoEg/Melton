@@ -166,5 +166,32 @@
   <ItemGroup>
     <None Include="Resources\Warrior.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\classic1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bossbackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\druidbackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hunterbackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magebackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\priesterbackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roguebackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warlockbackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warriorbackground.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
