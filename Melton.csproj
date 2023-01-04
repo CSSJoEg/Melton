@@ -52,7 +52,7 @@
     <Compile Include="Actions.Designer.cs">
       <DependentUpon>Actions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Basisklasse.cs" />
+    <Compile Include="MeltonCreature.cs" />
     <Compile Include="BoardUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +78,7 @@
     <Compile Include="Game.Designer.cs">
       <DependentUpon>Game.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\FormManager.cs" />
     <Compile Include="Interfaces.cs" />
     <Compile Include="Players.cs" />
     <Compile Include="Program.cs" />

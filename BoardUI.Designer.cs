@@ -41,13 +41,14 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(782, 776);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1564, 1552);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // BoardUI
             // 
             this.ClientSize = new System.Drawing.Size(782, 776);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "BoardUI";

@@ -66,7 +66,7 @@
             // start_btn
             // 
             this.start_btn.Location = new System.Drawing.Point(216, 612);
-            this.start_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.start_btn.Margin = new System.Windows.Forms.Padding(4);
             this.start_btn.Name = "start_btn";
             this.start_btn.Size = new System.Drawing.Size(352, 190);
             this.start_btn.TabIndex = 3;
@@ -77,7 +77,7 @@
             // btn_character
             // 
             this.btn_character.Location = new System.Drawing.Point(626, 612);
-            this.btn_character.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_character.Margin = new System.Windows.Forms.Padding(4);
             this.btn_character.Name = "btn_character";
             this.btn_character.Size = new System.Drawing.Size(352, 190);
             this.btn_character.TabIndex = 4;
@@ -88,7 +88,7 @@
             // btn_Settings
             // 
             this.btn_Settings.Location = new System.Drawing.Point(216, 837);
-            this.btn_Settings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Settings.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Settings.Name = "btn_Settings";
             this.btn_Settings.Size = new System.Drawing.Size(352, 190);
             this.btn_Settings.TabIndex = 5;
@@ -99,19 +99,20 @@
             // exit
             // 
             this.exit.Location = new System.Drawing.Point(626, 837);
-            this.exit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.exit.Margin = new System.Windows.Forms.Padding(4);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(352, 190);
             this.exit.TabIndex = 6;
             this.exit.Text = "Exit";
             this.exit.UseVisualStyleBackColor = true;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
             this.exit.MouseClick += new System.Windows.Forms.MouseEventHandler(this.exit_MouseClick);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(408, 54);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(400, 400);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -131,9 +132,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Startmenu";
             this.Text = "Startmenu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Startmenu_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

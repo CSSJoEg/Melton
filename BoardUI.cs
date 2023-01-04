@@ -10,6 +10,8 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Melton.Helpers;
+using System.CodeDom;
 
 namespace Melton
 {
@@ -25,6 +27,7 @@ namespace Melton
         Hunter hunter;
         Mage magier;
         Shaman schamane;
+
         public Form parent { get; set; }
         public string positionname
         {
@@ -59,13 +62,9 @@ namespace Melton
         public BoardUI(Form mdiParent)
         {
             InitializeComponent();
-            ButtonArray();
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             flowLayoutPanel1.BackgroundImage = Properties.Resources.background;
+            flowLayoutPanel1.BackgroundImageLayout = ImageLayout.Stretch;
             parent = mdiParent;
-            StartPosition = FormStartPosition.CenterScreen;
             action.Hide();
             Boss EvilBoss1 = new Boss()
             {
@@ -83,7 +82,7 @@ namespace Melton
                 DodgeValue = 0.2F,
                 Health = 100,
                 MaxHealth = 100,
-                Name = "Krieger"
+                Name = "player.Krieger"
             };
             Krieger = Krieger1;
             Hunter Jaeger1 = new Hunter()
@@ -93,7 +92,7 @@ namespace Melton
                 Energy = 100,
                 Health = 60,
                 MaxHealth = 60,
-                Name = "Jäger"
+                Name = "player.Jäger"
             };
             Jaeger = Jaeger1;
             Mage Magier1 = new Mage()
@@ -103,7 +102,7 @@ namespace Melton
                 Mana = 100,
                 Health = 60,
                 MaxHealth = 60,
-                Name = "Magier"
+                Name = "player.Magier"
             };
             Magier = Magier1;
             Shaman Schamane1 = new Shaman()
@@ -114,17 +113,31 @@ namespace Melton
                 Mana = 100,
                 Health = 80,
                 MaxHealth = 80,
-                Name = "Schamane"
+                Name = "player.Schamane"
             };
             Schamane = Schamane1;
-            List<MeltonCreature> players = new List<MeltonCreature>()
-           ;
+            List<MeltonCreature> players = new List<MeltonCreature>();
+
             players.Add(Krieger1);
             players.Add(Jaeger1);
             players.Add(Magier1);
             players.Add(Schamane1);
+
+            Eigenschaften form; 
+            foreach (MeltonCreature creature in players)
+            {
+                form = new Eigenschaften(this);
+                form.Tag = creature;
+                FormManager.GetInstance().Add(form, creature.Name);
+            }
+
+            form = new Eigenschaften(this);
+            form.Tag = EvilBoss1;
+            FormManager.GetInstance().Add(form, EvilBoss1.Name);
+
+            ButtonArray();
         }
-        public void ButtonArray()
+        private void ButtonArray()
         {
             for (int i = 0; i < 81; i++)
             {
@@ -139,27 +152,27 @@ namespace Melton
                 if ((int)btn.Tag == 22)
                 {
                     btn.BackgroundImage = Properties.Resources.Boss;
-                    btn.Name = "boss";
+                    btn.Name = EvilBoss.Name;
                 }
                 if ((int)btn.Tag == 56)
                 {
                     btn.BackgroundImage = Properties.Resources.Warrior;
-                    btn.Name = "player.Warrior";
+                    btn.Name = Krieger.Name;
                 }
                 if ((int)btn.Tag == 57)
                 {
                     btn.BackgroundImage = Properties.Resources.Mage;
-                    btn.Name = "player.Mage";
+                    btn.Name = Magier.Name;
                 }
                 if ((int) btn.Tag == 59)
                 {
                     btn.BackgroundImage = Properties.Resources.Hunter;
-                    btn.Name = "player.Hunter";
+                    btn.Name = Jaeger.Name;
                 }
                 if ((int) btn.Tag == 60)
                 {
                     btn.BackgroundImage = Properties.Resources.Druid;
-                    btn.Name = "player.Shaman";
+                    btn.Name = Schamane.Name;
                 }
                 btn.BackgroundImageLayout = ImageLayout.Stretch;
             }
@@ -168,25 +181,17 @@ namespace Melton
         {
             Button btnPos = (Button)sender;
             positionname = btnPos.Name;
-            if (btnPos.Name.Contains("player") || btnPos.Name.Contains("boss"))
+            if (btnPos.Name.Contains("player") || btnPos.Name.Contains("Boss"))
             {
-                
                 if(eigenschaften != null)
-                {
-                    eigenschaften.Close();
-                }
-                
-                eigenschaften = new Eigenschaften(this);
+                    eigenschaften.Hide();
+                eigenschaften = FormManager.GetInstance().Get(btnPos.Name);        
                 eigenschaften.MdiParent = parent;
                 action.MdiParent = parent;
-              
                 eigenschaften.Show();
                 action.Show();
-
-                action.Location = new Point(this.Location.X, this.Location.Y + 813);
-                eigenschaften.Location = new Point(this.Location.X + 796, this.Location.Y);
-
-
+                eigenschaften.Location = new Point(this.Location.X + 776, this.Location.Y);
+                action.Location = new Point(this.Location.X, this.Location.Y + 776);
             }
             else
             {
@@ -199,21 +204,16 @@ namespace Melton
         {
             if (eigenschaften != null)
             {
-                eigenschaften.Location = new Point(this.Location.X + 796, this.Location.Y);
-                action.Location = new Point(this.Location.X, this.Location.Y + 813);
+                eigenschaften.Location = new Point(this.Location.X + 776, this.Location.Y);
+                action.Location = new Point(this.Location.X, this.Location.Y + 776);
             }
         }
         private void BoardUI_FormClosed(object sender, FormClosedEventArgs e)
         {
             if(eigenschaften != null)
-            {
                 eigenschaften.Close();
-                
-            }
-            if(action != null)
-            {
+            if (action != null)
                 action.Close();
-            }
             Startmenu Menu = new Startmenu(game);
             Menu.MdiParent = game;
             Menu.Show();

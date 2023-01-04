@@ -201,7 +201,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Melton.Properties.Resources.classic;
-            this.ClientSize = new System.Drawing.Size(924, 1492);
+            this.ClientSize = new System.Drawing.Size(924, 1488);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.special_label);
@@ -214,9 +214,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.class_label);
             this.Controls.Add(this.classpicture);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Eigenschaften";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Eigenschaften";
             this.Load += new System.EventHandler(this.Eigenschaften_Load);
             ((System.ComponentModel.ISupportInitialize)(this.classpicture)).EndInit();

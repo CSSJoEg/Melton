@@ -54,5 +54,15 @@ namespace Melton
             setting.MdiParent = parent;
             setting.Show();
         }
+
+        private void Startmenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
