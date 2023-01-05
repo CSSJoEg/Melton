@@ -156,7 +156,7 @@
             this.special_label.Location = new System.Drawing.Point(575, 593);
             this.special_label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.special_label.Name = "special_label";
-            this.special_label.Size = new System.Drawing.Size(201, 37);
+            this.special_label.Size = new System.Drawing.Size(402, 74);
             this.special_label.TabIndex = 15;
             this.special_label.Text = "special_label";
             // 
@@ -169,9 +169,9 @@
             this.label9.Location = new System.Drawing.Point(482, 593);
             this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(81, 37);
+            this.label9.Size = new System.Drawing.Size(168, 74);
             this.label9.TabIndex = 14;
-            this.label9.Text = "SPV";
+            this.label9.Text = "GES";
             // 
             // textBox1
             // 

@@ -9,6 +9,7 @@ namespace Melton
     public abstract class MeltonCreature
     {
         public string Name { get; set; }
+        public int Position { get; set; }
         public int Attack { get; set; }
         public int Range { get; set; }
         public int Health { get; set; }

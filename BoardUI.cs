@@ -19,21 +19,15 @@ namespace Melton
     {
         Game game = (Game)Application.OpenForms["game"];
         Eigenschaften eigenschaften;
-        Actions action = new Actions();
+        Actions action;
         Button btn = new Button();
-        string name;
         Boss evilboss;
         Warrior krieger;
         Hunter hunter;
         Mage magier;
         Shaman schamane;
-
+        List<MeltonCreature> playerlist = new List<MeltonCreature>();
         public Form parent { get; set; }
-        public string positionname
-        {
-            get { return name; }
-            set { name = value; }
-        }
         public Boss EvilBoss
         {
             get { return evilboss; }
@@ -65,7 +59,6 @@ namespace Melton
             flowLayoutPanel1.BackgroundImage = Properties.Resources.background;
             flowLayoutPanel1.BackgroundImageLayout = ImageLayout.Stretch;
             parent = mdiParent;
-            action.Hide();
             Boss EvilBoss1 = new Boss()
             {
                 Attack = 40,
@@ -126,15 +119,13 @@ namespace Melton
             Eigenschaften form; 
             foreach (MeltonCreature creature in players)
             {
-                form = new Eigenschaften(this);
+                form = new Eigenschaften(this, creature);
                 form.Tag = creature;
                 FormManager.GetInstance().Add(form, creature.Name);
             }
-
-            form = new Eigenschaften(this);
+            form = new Eigenschaften(this, EvilBoss1);
             form.Tag = EvilBoss1;
             FormManager.GetInstance().Add(form, EvilBoss1.Name);
-
             ButtonArray();
         }
         private void ButtonArray()
@@ -153,26 +144,31 @@ namespace Melton
                 {
                     btn.BackgroundImage = Properties.Resources.Boss;
                     btn.Name = EvilBoss.Name;
+                    EvilBoss.Position = (int)btn.Tag;
                 }
                 if ((int)btn.Tag == 56)
                 {
                     btn.BackgroundImage = Properties.Resources.Warrior;
                     btn.Name = Krieger.Name;
+                    Krieger.Position = (int)btn.Tag;
                 }
                 if ((int)btn.Tag == 57)
                 {
                     btn.BackgroundImage = Properties.Resources.Mage;
                     btn.Name = Magier.Name;
+                    Magier.Position = (int)btn.Tag;
                 }
                 if ((int) btn.Tag == 59)
                 {
                     btn.BackgroundImage = Properties.Resources.Hunter;
                     btn.Name = Jaeger.Name;
+                    Jaeger.Position = (int)btn.Tag;
                 }
                 if ((int) btn.Tag == 60)
                 {
                     btn.BackgroundImage = Properties.Resources.Druid;
                     btn.Name = Schamane.Name;
+                    Schamane.Position = (int)btn.Tag;
                 }
                 btn.BackgroundImageLayout = ImageLayout.Stretch;
             }
@@ -180,10 +176,25 @@ namespace Melton
         public void btn_Click(object sender, EventArgs e)
         {
             Button btnPos = (Button)sender;
-            positionname = btnPos.Name;
             if (btnPos.Name.Contains("player") || btnPos.Name.Contains("Boss"))
             {
-                if(eigenschaften != null)
+                if(btnPos.Name.Contains("Krieger"))
+                {
+                    action = new Actions(this, Krieger);
+                }
+                else if (btnPos.Name.Contains("Magier"))
+                {
+                    action = new Actions(this, Magier);
+                }
+                else if (btnPos.Name.Contains("Jäger"))
+                {
+                    action = new Actions(this, Jaeger);
+                }
+                else if (btnPos.Name.Contains("Schamane"))
+                {
+                    action = new Actions(this, Schamane);
+                }
+                if (eigenschaften != null)
                     eigenschaften.Hide();
                 eigenschaften = FormManager.GetInstance().Get(btnPos.Name);        
                 eigenschaften.MdiParent = parent;
@@ -195,7 +206,8 @@ namespace Melton
             }
             else
             {
-                action.Hide();
+                if(action != null)
+                    action.Hide();
                 if (eigenschaften != null)
                     eigenschaften.Hide();
             }
