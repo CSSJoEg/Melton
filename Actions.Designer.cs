@@ -47,7 +47,6 @@
             this.Attack_button.Text = "Angreifen";
             this.Attack_button.UseVisualStyleBackColor = true;
             this.Attack_button.Click += new System.EventHandler(this.Attack_button_Click);
-            this.Attack_button.MouseHover += new System.EventHandler(this.Attack_button_MouseHover);
             // 
             // Ability_Button
             // 
@@ -60,6 +59,7 @@
             this.Ability_Button.Text = "Fähigkeiten";
             this.Ability_Button.UseVisualStyleBackColor = true;
             this.Ability_Button.Click += new System.EventHandler(this.Ability_Button_Click);
+            this.Ability_Button.MouseHover += new System.EventHandler(this.Ability_Button_MouseHover);
             // 
             // Skip_Button
             // 
@@ -71,6 +71,8 @@
             this.Skip_Button.TabIndex = 2;
             this.Skip_Button.Text = "Überspringen";
             this.Skip_Button.UseVisualStyleBackColor = true;
+            this.Skip_Button.Click += new System.EventHandler(this.Skip_Button_Click);
+            this.Skip_Button.MouseHover += new System.EventHandler(this.Skip_Button_MouseHover);
             // 
             // Fehler_label
             // 

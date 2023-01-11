@@ -54,7 +54,6 @@
             this.Name = "BoardUI";
             this.Text = "BoardUI";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BoardUI_FormClosed);
-            this.LocationChanged += new System.EventHandler(this.BoardUI_LocationChanged);
             this.ResumeLayout(false);
 
         }

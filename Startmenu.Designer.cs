@@ -29,39 +29,39 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Startmenu));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.titel = new System.Windows.Forms.Label();
+            this.subtitel = new System.Windows.Forms.Label();
             this.start_btn = new System.Windows.Forms.Button();
             this.btn_character = new System.Windows.Forms.Button();
             this.btn_Settings = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.titelbild = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.titelbild)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // titel
             // 
-            this.label1.AutoSize = true;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(500, 456);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(240, 79);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Melton";
+            this.titel.AutoSize = true;
+            this.titel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.titel.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titel.Location = new System.Drawing.Point(500, 456);
+            this.titel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.titel.Name = "titel";
+            this.titel.Size = new System.Drawing.Size(240, 79);
+            this.titel.TabIndex = 1;
+            this.titel.Text = "Melton";
             // 
-            // label2
+            // subtitel
             // 
-            this.label2.AutoSize = true;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(400, 535);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(417, 37);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Rougelike / Dungeoncrawler";
+            this.subtitel.AutoSize = true;
+            this.subtitel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.subtitel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subtitel.Location = new System.Drawing.Point(400, 535);
+            this.subtitel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.subtitel.Name = "subtitel";
+            this.subtitel.Size = new System.Drawing.Size(417, 37);
+            this.subtitel.TabIndex = 2;
+            this.subtitel.Text = "Rougelike / Dungeoncrawler";
             // 
             // start_btn
             // 
@@ -108,35 +108,35 @@
             this.exit.Click += new System.EventHandler(this.exit_Click);
             this.exit.MouseClick += new System.Windows.Forms.MouseEventHandler(this.exit_MouseClick);
             // 
-            // pictureBox1
+            // titelbild
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(408, 54);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(400, 400);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.titelbild.Image = ((System.Drawing.Image)(resources.GetObject("titelbild.Image")));
+            this.titelbild.Location = new System.Drawing.Point(408, 54);
+            this.titelbild.Margin = new System.Windows.Forms.Padding(4);
+            this.titelbild.Name = "titelbild";
+            this.titelbild.Size = new System.Drawing.Size(400, 400);
+            this.titelbild.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.titelbild.TabIndex = 0;
+            this.titelbild.TabStop = false;
             // 
             // Startmenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1204, 1062);
+            this.ClientSize = new System.Drawing.Size(1187, 1134);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.btn_Settings);
             this.Controls.Add(this.btn_character);
             this.Controls.Add(this.start_btn);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.subtitel);
+            this.Controls.Add(this.titel);
+            this.Controls.Add(this.titelbild);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Startmenu";
             this.Text = "Startmenu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Startmenu_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.titelbild)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,9 +144,9 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox titelbild;
+        private System.Windows.Forms.Label titel;
+        private System.Windows.Forms.Label subtitel;
         private System.Windows.Forms.Button start_btn;
         private System.Windows.Forms.Button btn_character;
         private System.Windows.Forms.Button btn_Settings;

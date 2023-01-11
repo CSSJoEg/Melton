@@ -15,8 +15,10 @@ using System.CodeDom;
 
 namespace Melton
 {
+
     public partial class BoardUI : Form
     {
+        Button sourceButton;
         Game game = (Game)Application.OpenForms["game"];
         Eigenschaften eigenschaften;
         Actions action;
@@ -53,6 +55,7 @@ namespace Melton
             get { return schamane; }
             set { schamane = value; }
         }
+        public string Data { get; set; }
         public BoardUI(Form mdiParent)
         {
             InitializeComponent();
@@ -116,16 +119,24 @@ namespace Melton
             players.Add(Magier1);
             players.Add(Schamane1);
 
-            Eigenschaften form; 
+            Eigenschaften eigform;
+            Actions actform;
             foreach (MeltonCreature creature in players)
             {
-                form = new Eigenschaften(this, creature);
-                form.Tag = creature;
-                FormManager.GetInstance().Add(form, creature.Name);
+                eigform = new Eigenschaften(this, creature);
+                actform = new Actions(this, creature);
+                eigform.Tag = creature;
+                actform.Tag = creature;
+                FormManager.GetInstance().AddEig(eigform, creature.Name);
+                FormManager.GetInstance().AddAct(actform, creature.Name);
+
             }
-            form = new Eigenschaften(this, EvilBoss1);
-            form.Tag = EvilBoss1;
-            FormManager.GetInstance().Add(form, EvilBoss1.Name);
+            eigform = new Eigenschaften(this, EvilBoss1);
+            actform = new Actions(this, EvilBoss1);
+            eigform.Tag = EvilBoss1;
+            actform.Tag = EvilBoss1;
+            FormManager.GetInstance().AddEig(eigform, EvilBoss1.Name);
+            FormManager.GetInstance().AddAct(actform, EvilBoss1.Name);
             ButtonArray();
         }
         private void ButtonArray()
@@ -133,12 +144,18 @@ namespace Melton
             for (int i = 0; i < 81; i++)
             {
                 btn = new Button();
+
                 btn.FlatStyle = FlatStyle.Flat;
-                btn.BackColor= Color.Transparent;
+                btn.BackColor = Color.Transparent;
                 btn.Size = new Size(80, 80);
                 btn.ForeColor = Color.Black;
+                btn.AllowDrop= true;
+                btn.Click+= btn_Click;
+                btn.MouseDown += btn_MouseDown;
+                btn.DragEnter += btn_DragEnter;
+                btn.DragDrop += btn_DragDrop;
+                
                 btn.Tag = (int)i;
-                btn.Click += btn_Click;
                 flowLayoutPanel1.Controls.Add(btn);
                 if ((int)btn.Tag == 22)
                 {
@@ -158,13 +175,13 @@ namespace Melton
                     btn.Name = Magier.Name;
                     Magier.Position = (int)btn.Tag;
                 }
-                if ((int) btn.Tag == 59)
+                if ((int)btn.Tag == 59)
                 {
                     btn.BackgroundImage = Properties.Resources.Hunter;
                     btn.Name = Jaeger.Name;
                     Jaeger.Position = (int)btn.Tag;
                 }
-                if ((int) btn.Tag == 60)
+                if ((int)btn.Tag == 60)
                 {
                     btn.BackgroundImage = Properties.Resources.Druid;
                     btn.Name = Schamane.Name;
@@ -178,57 +195,53 @@ namespace Melton
             Button btnPos = (Button)sender;
             if (btnPos.Name.Contains("player") || btnPos.Name.Contains("Boss"))
             {
-                if(btnPos.Name.Contains("Krieger"))
-                {
-                    action = new Actions(this, Krieger);
-                }
-                else if (btnPos.Name.Contains("Magier"))
-                {
-                    action = new Actions(this, Magier);
-                }
-                else if (btnPos.Name.Contains("Jäger"))
-                {
-                    action = new Actions(this, Jaeger);
-                }
-                else if (btnPos.Name.Contains("Schamane"))
-                {
-                    action = new Actions(this, Schamane);
-                }
                 if (eigenschaften != null)
                     eigenschaften.Hide();
-                eigenschaften = FormManager.GetInstance().Get(btnPos.Name);        
+                if (action != null)
+                    action.Hide();
+                eigenschaften = FormManager.GetInstance().GetEig(btnPos.Name);
+                action = FormManager.GetInstance().GetAct(btnPos.Name);
                 eigenschaften.MdiParent = parent;
                 action.MdiParent = parent;
-                eigenschaften.Show();
                 action.Show();
+                eigenschaften.Show();
                 eigenschaften.Location = new Point(this.Location.X + 776, this.Location.Y);
                 action.Location = new Point(this.Location.X, this.Location.Y + 776);
             }
             else
             {
-                if(action != null)
+                if (action != null)
                     action.Hide();
                 if (eigenschaften != null)
                     eigenschaften.Hide();
             }
         }
-        public void BoardUI_LocationChanged(object sender, EventArgs e)
-        {
-            if (eigenschaften != null)
-            {
-                eigenschaften.Location = new Point(this.Location.X + 776, this.Location.Y);
-                action.Location = new Point(this.Location.X, this.Location.Y + 776);
-            }
-        }
         private void BoardUI_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if(eigenschaften != null)
+            if (eigenschaften != null)
                 eigenschaften.Close();
             if (action != null)
                 action.Close();
             Startmenu Menu = new Startmenu(game);
             Menu.MdiParent = game;
             Menu.Show();
+        }
+        private void btn_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                DoDragDrop(this, DragDropEffects.Copy);
+            }
+        }
+        private void btn_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+        private void btn_DragDrop(object sender, DragEventArgs e)
+        {
+            sourceButton = (Button)e.Data.GetData(typeof(Button));
+            this.Tag = sourceButton.Tag;
+            this.BackgroundImage = sourceButton.BackgroundImage;
         }
     }
 }

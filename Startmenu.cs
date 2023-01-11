@@ -24,9 +24,9 @@ namespace Melton
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
-            gp.AddEllipse(0, 0, pictureBox1.Width - 3, pictureBox1.Height - 3);
+            gp.AddEllipse(0, 0, titelbild.Width - 3, titelbild.Height - 3);
             Region rg = new Region(gp);
-            pictureBox1.Region = rg;
+            titelbild.Region = rg;
             parent = mdiParent;
         }
         private void start_btn_Click(object sender, EventArgs e)

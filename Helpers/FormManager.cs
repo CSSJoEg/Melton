@@ -10,10 +10,12 @@ namespace Melton.Helpers
     public class FormManager
     {
         static FormManager instance;
+        Dictionary<string, Eigenschaften> eigforms = new Dictionary<string, Eigenschaften>();
+        Dictionary<string, Actions> actforms = new Dictionary<string, Actions>();
 
-        Dictionary<string, Eigenschaften> forms = new Dictionary<string, Eigenschaften>();
-
-        private FormManager() { }
+        private FormManager()
+        { 
+        }
 
         public static FormManager GetInstance()
         {
@@ -25,17 +27,30 @@ namespace Melton.Helpers
             return instance;
         }
 
-        public void Add(Eigenschaften form, string key)
-        { 
-            forms.Add(key, form);
+        public void AddEig(Eigenschaften eigform, string key)
+        {
+            eigforms.Add(key, eigform);
         }
-
-        public Eigenschaften Get(string key) 
+        public void AddAct(Actions actform, string key)
+        {
+            actforms.Add(key, actform);
+        }
+        public Eigenschaften GetEig(string key) 
         {
             Eigenschaften form = null;
-            if (forms.ContainsKey(key)) 
+            if (eigforms.ContainsKey(key)) 
             {
-                form = forms[key];
+                form = eigforms[key];
+            }
+
+            return form;
+        }
+        public Actions GetAct(string key)
+        {
+            Actions form = null;
+            if (eigforms.ContainsKey(key))
+            {
+                form = actforms[key];
             }
 
             return form;
