@@ -18,11 +18,12 @@ namespace Melton
 
     public partial class BoardUI : Form
     {
-        Button sourceButton;
         Game game = (Game)Application.OpenForms["game"];
         Eigenschaften eigenschaften;
         Actions action;
         Button btn = new Button();
+        Button btndragclass;
+        Button btndropclass;
         Boss evilboss;
         Warrior krieger;
         Hunter hunter;
@@ -54,6 +55,16 @@ namespace Melton
         {
             get { return schamane; }
             set { schamane = value; }
+        }
+        public Button Btndragclass
+        {
+            get { return btndragclass; }
+            set { btndragclass = value; }
+        }
+        public Button Btndropclass
+        {
+            get { return btndropclass; }
+            set { btndropclass = value; }
         }
         public string Data { get; set; }
         public BoardUI(Form mdiParent)
@@ -112,6 +123,11 @@ namespace Melton
                 Name = "player.Schamane"
             };
             Schamane = Schamane1;
+            EvilBoss.Position = 22;
+            Krieger.Position = 56;
+            Magier.Position = 57;
+            Jaeger.Position = 59;
+            Schamane.Position = 60;
             List<MeltonCreature> players = new List<MeltonCreature>();
 
             players.Add(Krieger1);
@@ -150,47 +166,65 @@ namespace Melton
                 btn.Size = new Size(80, 80);
                 btn.ForeColor = Color.Black;
                 btn.AllowDrop= true;
-                btn.Click+= btn_Click;
                 btn.MouseDown += btn_MouseDown;
                 btn.DragEnter += btn_DragEnter;
                 btn.DragDrop += btn_DragDrop;
                 
                 btn.Tag = (int)i;
                 flowLayoutPanel1.Controls.Add(btn);
-                if ((int)btn.Tag == 22)
+                if ((int)btn.Tag == EvilBoss.Position)
                 {
                     btn.BackgroundImage = Properties.Resources.Boss;
                     btn.Name = EvilBoss.Name;
-                    EvilBoss.Position = (int)btn.Tag;
                 }
-                if ((int)btn.Tag == 56)
+                if ((int)btn.Tag == Krieger.Position)
                 {
                     btn.BackgroundImage = Properties.Resources.Warrior;
                     btn.Name = Krieger.Name;
-                    Krieger.Position = (int)btn.Tag;
                 }
-                if ((int)btn.Tag == 57)
+                if ((int)btn.Tag == Magier.Position)
                 {
                     btn.BackgroundImage = Properties.Resources.Mage;
                     btn.Name = Magier.Name;
-                    Magier.Position = (int)btn.Tag;
                 }
-                if ((int)btn.Tag == 59)
+                if ((int)btn.Tag == Jaeger.Position)
                 {
                     btn.BackgroundImage = Properties.Resources.Hunter;
                     btn.Name = Jaeger.Name;
-                    Jaeger.Position = (int)btn.Tag;
                 }
-                if ((int)btn.Tag == 60)
+                if ((int)btn.Tag == Schamane.Position)
                 {
                     btn.BackgroundImage = Properties.Resources.Druid;
                     btn.Name = Schamane.Name;
-                    Schamane.Position = (int)btn.Tag;
                 }
                 btn.BackgroundImageLayout = ImageLayout.Stretch;
             }
         }
-        public void btn_Click(object sender, EventArgs e)
+        private void BoardUI_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (eigenschaften != null)
+                eigenschaften.Close();
+            if (action != null)
+                action.Close();
+            Startmenu Menu = new Startmenu(game);
+            Menu.MdiParent = game;
+        }
+        private void btn_MouseDown(object sender, MouseEventArgs e)
+        {
+            Button btndrag = (Button)sender;
+            Btndragclass = btndrag;
+            if (e.Button == MouseButtons.Left)
+            {
+                DoDragDrop(this, DragDropEffects.Copy);
+            }
+        }
+        private void btn_DragEnter(object sender, DragEventArgs e)
+        {
+            Button btndrop = (Button)sender;
+            Btndropclass = btndrop;
+            e.Effect = DragDropEffects.Copy;
+        }
+        private void btn_DragDrop(object sender, DragEventArgs e)
         {
             Button btnPos = (Button)sender;
             if (btnPos.Name.Contains("player") || btnPos.Name.Contains("Boss"))
@@ -215,33 +249,25 @@ namespace Melton
                 if (eigenschaften != null)
                     eigenschaften.Hide();
             }
-        }
-        private void BoardUI_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (eigenschaften != null)
-                eigenschaften.Close();
-            if (action != null)
-                action.Close();
-            Startmenu Menu = new Startmenu(game);
-            Menu.MdiParent = game;
-            Menu.Show();
-        }
-        private void btn_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
+            Btndragclass.Tag = Btndropclass.Tag;
+            Btndropclass.BackgroundImage = Btndragclass.BackgroundImage;
+            Btndropclass.Name = Btndragclass.Name;
+            if(btnPos.Name.Contains("Krieger"))
             {
-                DoDragDrop(this, DragDropEffects.Copy);
+                Krieger.Position = (int)btnPos.Tag;
             }
-        }
-        private void btn_DragEnter(object sender, DragEventArgs e)
-        {
-            e.Effect = DragDropEffects.Copy;
-        }
-        private void btn_DragDrop(object sender, DragEventArgs e)
-        {
-            sourceButton = (Button)e.Data.GetData(typeof(Button));
-            this.Tag = sourceButton.Tag;
-            this.BackgroundImage = sourceButton.BackgroundImage;
+            if (btnPos.Name.Contains("Magier"))
+            {
+                Magier.Position = (int)btnPos.Tag;
+            }
+            if (btnPos.Name.Contains("Jäger"))
+            {
+                Jaeger.Position = (int)btnPos.Tag;
+            }
+            if (btnPos.Name.Contains("Schamane"))
+            {
+                Schamane.Position = (int)btnPos.Tag;
+            }
         }
     }
 }
