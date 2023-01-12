@@ -48,7 +48,7 @@ namespace Melton.Helpers
         public Actions GetAct(string key)
         {
             Actions form = null;
-            if (eigforms.ContainsKey(key))
+            if (actforms.ContainsKey(key))
             {
                 form = actforms[key];
             }

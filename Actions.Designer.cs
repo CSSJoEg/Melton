@@ -96,6 +96,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Actions";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Actions";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -29,7 +29,6 @@ namespace Melton
         Hunter hunter;
         Mage magier;
         Shaman schamane;
-        List<MeltonCreature> playerlist = new List<MeltonCreature>();
         public Form parent { get; set; }
         public Boss EvilBoss
         {
@@ -66,7 +65,6 @@ namespace Melton
             get { return btndropclass; }
             set { btndropclass = value; }
         }
-        public string Data { get; set; }
         public BoardUI(Form mdiParent)
         {
             InitializeComponent();
@@ -148,11 +146,11 @@ namespace Melton
 
             }
             eigform = new Eigenschaften(this, EvilBoss1);
-            actform = new Actions(this, EvilBoss1);
+           // actform = new Actions(this, EvilBoss1);
             eigform.Tag = EvilBoss1;
-            actform.Tag = EvilBoss1;
+            //actform.Tag = EvilBoss1;
             FormManager.GetInstance().AddEig(eigform, EvilBoss1.Name);
-            FormManager.GetInstance().AddAct(actform, EvilBoss1.Name);
+           // FormManager.GetInstance().AddAct(actform, EvilBoss1.Name);
             ButtonArray();
         }
         private void ButtonArray()
@@ -160,16 +158,16 @@ namespace Melton
             for (int i = 0; i < 81; i++)
             {
                 btn = new Button();
-
+                btn.BackgroundImage = null;
+                btn.Name = "";
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.BackColor = Color.Transparent;
                 btn.Size = new Size(80, 80);
                 btn.ForeColor = Color.Black;
-                btn.AllowDrop= true;
+                btn.AllowDrop = true;
                 btn.MouseDown += btn_MouseDown;
                 btn.DragEnter += btn_DragEnter;
                 btn.DragDrop += btn_DragDrop;
-                
                 btn.Tag = (int)i;
                 flowLayoutPanel1.Controls.Add(btn);
                 if ((int)btn.Tag == EvilBoss.Position)
@@ -233,14 +231,19 @@ namespace Melton
                     eigenschaften.Hide();
                 if (action != null)
                     action.Hide();
-                eigenschaften = FormManager.GetInstance().GetEig(btnPos.Name);
+               
                 action = FormManager.GetInstance().GetAct(btnPos.Name);
+                if (action != null)
+                {
+                    action.MdiParent = parent;
+                    action.Show();
+                    action.Location = new Point(this.Location.X, this.Location.Y + 776);
+                }
+
+                eigenschaften = FormManager.GetInstance().GetEig(btnPos.Name);
                 eigenschaften.MdiParent = parent;
-                action.MdiParent = parent;
-                action.Show();
                 eigenschaften.Show();
                 eigenschaften.Location = new Point(this.Location.X + 776, this.Location.Y);
-                action.Location = new Point(this.Location.X, this.Location.Y + 776);
             }
             else
             {
@@ -249,10 +252,9 @@ namespace Melton
                 if (eigenschaften != null)
                     eigenschaften.Hide();
             }
-            Btndragclass.Tag = Btndropclass.Tag;
             Btndropclass.BackgroundImage = Btndragclass.BackgroundImage;
             Btndropclass.Name = Btndragclass.Name;
-            if(btnPos.Name.Contains("Krieger"))
+            if (btnPos.Name.Contains("Krieger"))
             {
                 Krieger.Position = (int)btnPos.Tag;
             }
@@ -268,6 +270,8 @@ namespace Melton
             {
                 Schamane.Position = (int)btnPos.Tag;
             }
+            flowLayoutPanel1.Controls.Clear();
+            ButtonArray();
         }
     }
 }
