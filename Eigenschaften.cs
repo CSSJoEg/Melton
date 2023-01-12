@@ -26,7 +26,7 @@ namespace Melton
             if (this.creature is Boss)
             {
                 classpicture.BackgroundImage = Properties.Resources.bossbackground;
-                class_label.Text = "Sensenmann";
+                class_boss.Text = "Sensenmann";
                 HP_label.Text = Convert.ToString(board.EvilBoss.Health);
                 MP_label.Text = Convert.ToString(board.EvilBoss.Rage);
                 special_label.Text = Convert.ToString(board.EvilBoss.AttackSpeed);
@@ -58,7 +58,7 @@ namespace Melton
             if (this.creature is Shaman)
             {
                 classpicture.BackgroundImage = Properties.Resources.druidbackground;
-                class_label.Text = "Schamane";
+                class_shaman.Text = "Schamane";
                 HP_label.Text = Convert.ToString(board.Schamane.Health);
                 MP_label.Text = Convert.ToString(board.Schamane.Mana);
                 special_label.Text = Convert.ToString(board.Schamane.AttackSpeed);

@@ -66,7 +66,7 @@ namespace Melton
                 }
                 else
                 {
-                    Fehler_label.Text = "SPIELER IST NICHT IN REICHWEITE";
+                    Fehler_label.Text = "Krieger IST NICHT IN REICHWEITE";
                 }
             }
             else if (Warriormove == true)

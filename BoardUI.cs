@@ -12,10 +12,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Melton.Helpers;
 using System.CodeDom;
+using System.Media;
 
 namespace Melton
 {
-
     public partial class BoardUI : Form
     {
         Game game = (Game)Application.OpenForms["game"];
@@ -29,6 +29,10 @@ namespace Melton
         Hunter hunter;
         Mage magier;
         Shaman schamane;
+        bool warriormove = false;
+        bool magemove = false;
+        bool huntermove = false;
+        bool shamanmove = false ;
         public Form parent { get; set; }
         public Boss EvilBoss
         {
@@ -143,14 +147,10 @@ namespace Melton
                 actform.Tag = creature;
                 FormManager.GetInstance().AddEig(eigform, creature.Name);
                 FormManager.GetInstance().AddAct(actform, creature.Name);
-
             }
             eigform = new Eigenschaften(this, EvilBoss1);
-           // actform = new Actions(this, EvilBoss1);
             eigform.Tag = EvilBoss1;
-            //actform.Tag = EvilBoss1;
             FormManager.GetInstance().AddEig(eigform, EvilBoss1.Name);
-           // FormManager.GetInstance().AddAct(actform, EvilBoss1.Name);
             ButtonArray();
         }
         private void ButtonArray()
@@ -237,7 +237,7 @@ namespace Melton
                 {
                     action.MdiParent = parent;
                     action.Show();
-                    action.Location = new Point(this.Location.X, this.Location.Y + 776);
+                    action.Location = new Point(this.Location.X, this.Location.Y + 768);
                 }
 
                 eigenschaften = FormManager.GetInstance().GetEig(btnPos.Name);
@@ -252,8 +252,33 @@ namespace Melton
                 if (eigenschaften != null)
                     eigenschaften.Hide();
             }
-            Btndropclass.BackgroundImage = Btndragclass.BackgroundImage;
-            Btndropclass.Name = Btndragclass.Name;
+            if (((int)btndragclass.Tag + 1) == (int)btndropclass.Tag || ((int)btndragclass.Tag - 1) == (int)btndropclass.Tag || ((int)btndragclass.Tag + 8) == (int)btndropclass.Tag || ((int)btndragclass.Tag - 8) == (int)btndropclass.Tag || ((int)btndragclass.Tag + 9) == (int)btndropclass.Tag || ((int)btndragclass.Tag - 9) == (int)btndropclass.Tag || ((int)btndragclass.Tag + 10) == (int)btndropclass.Tag || ((int)btndragclass.Tag - 10) == (int)btndropclass.Tag)
+            {
+                if (btndragclass.Name.Contains("Krieger") && warriormove == false)
+                {
+                    Btndropclass.BackgroundImage = Btndragclass.BackgroundImage;
+                    Btndropclass.Name = Btndragclass.Name;
+                    warriormove = true;
+                }
+                if (btndragclass.Name.Contains("Magier") && magemove == false)
+                {
+                    Btndropclass.BackgroundImage = Btndragclass.BackgroundImage;
+                    Btndropclass.Name = Btndragclass.Name;
+                    magemove = true;
+                }
+                if (btndragclass.Name.Contains("Jäger") && huntermove == false)
+                {
+                    Btndropclass.BackgroundImage = Btndragclass.BackgroundImage;
+                    Btndropclass.Name = Btndragclass.Name;
+                    huntermove = true;
+                }
+                if (btndragclass.Name.Contains("Schamane") && shamanmove == false)
+                {
+                    Btndropclass.BackgroundImage = Btndragclass.BackgroundImage;
+                    Btndropclass.Name = Btndragclass.Name;
+                    shamanmove = true;
+                }
+            }
             if (btnPos.Name.Contains("Krieger"))
             {
                 Krieger.Position = (int)btnPos.Tag;
@@ -272,6 +297,42 @@ namespace Melton
             }
             flowLayoutPanel1.Controls.Clear();
             ButtonArray();
+        }
+
+        private void BoardUI_Load(object sender, EventArgs e)
+        {
+            
+            LoadingScreen load = new LoadingScreen();
+            load.TopMost = true;
+            load.Show();
+            Gameloading(EvilBoss.Name);
+            Gameloading(Krieger.Name);
+            Gameloading(Magier.Name);
+            Gameloading(Jaeger.Name);
+            Gameloading(Schamane.Name);
+            game.Hide(); 
+            
+
+        }
+        private void Gameloading(string playername)
+        {
+            if (eigenschaften != null)
+                eigenschaften.Hide();
+            if (action != null)
+                action.Hide();
+
+            action = FormManager.GetInstance().GetAct(playername);
+            if (action != null)
+            {
+                action.MdiParent = parent;
+                action.Show();
+                action.Location = new Point(this.Location.X, this.Location.Y + 768);
+            }
+
+            eigenschaften = FormManager.GetInstance().GetEig(playername);
+            eigenschaften.MdiParent = parent;
+            eigenschaften.Show();
+            eigenschaften.Location = new Point(this.Location.X + 776, this.Location.Y);
         }
     }
 }
