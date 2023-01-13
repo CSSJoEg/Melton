@@ -123,6 +123,16 @@ namespace Melton.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Druidzug {
+            get {
+                object obj = ResourceManager.GetObject("Druidzug", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Hunter {
             get {
                 object obj = ResourceManager.GetObject("Hunter", resourceCulture);
@@ -136,6 +146,16 @@ namespace Melton.Properties {
         internal static System.Drawing.Bitmap hunterbackground {
             get {
                 object obj = ResourceManager.GetObject("hunterbackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hunterzug {
+            get {
+                object obj = ResourceManager.GetObject("Hunterzug", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +186,16 @@ namespace Melton.Properties {
         internal static System.Drawing.Bitmap magebackground {
             get {
                 object obj = ResourceManager.GetObject("magebackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Magezug {
+            get {
+                object obj = ResourceManager.GetObject("Magezug", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,6 +276,16 @@ namespace Melton.Properties {
         internal static System.Drawing.Bitmap warriorbackground {
             get {
                 object obj = ResourceManager.GetObject("warriorbackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Warriorzug {
+            get {
+                object obj = ResourceManager.GetObject("Warriorzug", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

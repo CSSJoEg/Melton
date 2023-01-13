@@ -15,8 +15,6 @@ namespace Melton
         {
             creature.Health -= this.AOE;
             creature.Health -= this.AOE;
-            creature.Health -= this.AOE;
-            creature.Health -= this.AOE;
         }
     }
 }

@@ -42,12 +42,14 @@
             // titel
             // 
             this.titel.AutoSize = true;
+            this.titel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.titel.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.titel.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titel.Location = new System.Drawing.Point(500, 456);
+            this.titel.ForeColor = System.Drawing.SystemColors.Control;
+            this.titel.Location = new System.Drawing.Point(513, 436);
             this.titel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.titel.Name = "titel";
-            this.titel.Size = new System.Drawing.Size(240, 79);
+            this.titel.Size = new System.Drawing.Size(121, 39);
             this.titel.TabIndex = 1;
             this.titel.Text = "Melton";
             // 
@@ -56,19 +58,24 @@
             this.subtitel.AutoSize = true;
             this.subtitel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.subtitel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subtitel.Location = new System.Drawing.Point(400, 535);
+            this.subtitel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.subtitel.Location = new System.Drawing.Point(404, 510);
             this.subtitel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.subtitel.Name = "subtitel";
-            this.subtitel.Size = new System.Drawing.Size(417, 37);
+            this.subtitel.Size = new System.Drawing.Size(208, 20);
             this.subtitel.TabIndex = 2;
             this.subtitel.Text = "Rougelike / Dungeoncrawler";
             // 
             // start_btn
             // 
-            this.start_btn.Location = new System.Drawing.Point(216, 612);
+            this.start_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("start_btn.BackgroundImage")));
+            this.start_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.start_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.start_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.start_btn.Location = new System.Drawing.Point(227, 612);
             this.start_btn.Margin = new System.Windows.Forms.Padding(4);
             this.start_btn.Name = "start_btn";
-            this.start_btn.Size = new System.Drawing.Size(352, 190);
+            this.start_btn.Size = new System.Drawing.Size(352, 152);
             this.start_btn.TabIndex = 3;
             this.start_btn.Text = "Start Game";
             this.start_btn.UseVisualStyleBackColor = true;
@@ -76,10 +83,14 @@
             // 
             // btn_character
             // 
-            this.btn_character.Location = new System.Drawing.Point(626, 612);
+            this.btn_character.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_character.BackgroundImage")));
+            this.btn_character.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_character.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_character.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_character.Location = new System.Drawing.Point(616, 612);
             this.btn_character.Margin = new System.Windows.Forms.Padding(4);
             this.btn_character.Name = "btn_character";
-            this.btn_character.Size = new System.Drawing.Size(352, 190);
+            this.btn_character.Size = new System.Drawing.Size(352, 152);
             this.btn_character.TabIndex = 4;
             this.btn_character.Text = "Characters";
             this.btn_character.UseVisualStyleBackColor = true;
@@ -87,10 +98,14 @@
             // 
             // btn_Settings
             // 
-            this.btn_Settings.Location = new System.Drawing.Point(216, 837);
+            this.btn_Settings.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Settings.BackgroundImage")));
+            this.btn_Settings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Settings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_Settings.Location = new System.Drawing.Point(227, 806);
             this.btn_Settings.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Settings.Name = "btn_Settings";
-            this.btn_Settings.Size = new System.Drawing.Size(352, 190);
+            this.btn_Settings.Size = new System.Drawing.Size(352, 152);
             this.btn_Settings.TabIndex = 5;
             this.btn_Settings.Text = "Settings";
             this.btn_Settings.UseVisualStyleBackColor = true;
@@ -98,10 +113,14 @@
             // 
             // exit
             // 
-            this.exit.Location = new System.Drawing.Point(626, 837);
+            this.exit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("exit.BackgroundImage")));
+            this.exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.exit.Location = new System.Drawing.Point(616, 806);
             this.exit.Margin = new System.Windows.Forms.Padding(4);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(352, 190);
+            this.exit.Size = new System.Drawing.Size(352, 152);
             this.exit.TabIndex = 6;
             this.exit.Text = "Exit";
             this.exit.UseVisualStyleBackColor = true;
@@ -110,7 +129,8 @@
             // 
             // titelbild
             // 
-            this.titelbild.Image = ((System.Drawing.Image)(resources.GetObject("titelbild.Image")));
+            this.titelbild.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.titelbild.Image = global::Melton.Properties.Resources.logo;
             this.titelbild.Location = new System.Drawing.Point(408, 54);
             this.titelbild.Margin = new System.Windows.Forms.Padding(4);
             this.titelbild.Name = "titelbild";
@@ -123,6 +143,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1187, 1134);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.btn_Settings);

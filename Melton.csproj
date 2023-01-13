@@ -209,5 +209,17 @@
   <ItemGroup>
     <None Include="Resources\warriorbackground.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Druidzug1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hunterzug1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Magezug1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warriorzug1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

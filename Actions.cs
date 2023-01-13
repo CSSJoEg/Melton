@@ -56,7 +56,11 @@ namespace Melton
         }
         private void Attack_button_Click(object sender, EventArgs e)
         {
-            if (player is Warrior && Warriormove == false)
+            Warriormove = board.MoveOfWarrior;
+            Magemove = board.MoveOfMage;
+            Huntermove = board.MoveOfHunter;
+            Shamanmove = board.MoveOfShaman;
+            if (player is Warrior && Warriormove == false && board.Krieger.Health > 0)
             {
                 if ((player.Position + 1) == board.EvilBoss.Position || (player.Position - 1) == board.EvilBoss.Position || (player.Position + 8) == board.EvilBoss.Position || (player.Position - 8) == board.EvilBoss.Position || (player.Position + 9) == board.EvilBoss.Position || (player.Position - 9) == board.EvilBoss.Position || (player.Position + 10) == board.EvilBoss.Position || (player.Position - 10) == board.EvilBoss.Position)
                 {
@@ -78,7 +82,7 @@ namespace Melton
                 if ((player.Position + 1) == board.EvilBoss.Position || (player.Position - 1) == board.EvilBoss.Position || (player.Position + 2) == board.EvilBoss.Position || (player.Position - 2) == board.EvilBoss.Position || (player.Position + 7) == board.EvilBoss.Position || (player.Position - 7) == board.EvilBoss.Position || (player.Position + 9) == board.EvilBoss.Position || (player.Position - 9) == board.EvilBoss.Position || (player.Position + 10) == board.EvilBoss.Position || (player.Position - 10) == board.EvilBoss.Position || (player.Position + 11) == board.EvilBoss.Position || (player.Position - 11) == board.EvilBoss.Position || (player.Position + 16) == board.EvilBoss.Position || (player.Position - 16) == board.EvilBoss.Position || (player.Position + 17) == board.EvilBoss.Position || (player.Position - 17) == board.EvilBoss.Position || (player.Position + 18) == board.EvilBoss.Position || (player.Position - 18) == board.EvilBoss.Position || (player.Position + 19) == board.EvilBoss.Position || (player.Position - 19) == board.EvilBoss.Position || (player.Position + 20) == board.EvilBoss.Position || (player.Position - 20) == board.EvilBoss.Position)
                 {
                     player.DoAttack(board.EvilBoss);
-                    if (player is Mage && Magemove == false)
+                    if (player is Mage && Magemove == false && board.Magier.Health > 0)
                     {
                         Fehler_label.Text = "Magier hat angegriffen";
                         Magemove = true;
@@ -87,7 +91,7 @@ namespace Melton
                     {
                         Fehler_label.Text = "Magier hat kein Zug mehr!";
                     }
-                    if (player is Shaman && Shamanmove == false)
+                    if (player is Shaman && Shamanmove == false && board.Schamane.Health > 0)
                     {
                         Fehler_label.Text = "Schamane hat angegriffen";
                         Shamanmove = true;
@@ -96,15 +100,13 @@ namespace Melton
                     {
                         Fehler_label.Text = "Schamane hat kein Zug mehr!";
                     }
-
                 }
                 else
                 {
                     Fehler_label.Text = "SPIELER IST NICHT IN REICHWEITE";
                 }
-                
             }
-            if (player is Hunter && Huntermove == false)
+            if (player is Hunter && Huntermove == false && board.Jaeger.Health > 0)
             {
                 if ((player.Position + 1) == board.EvilBoss.Position || (player.Position - 1) == board.EvilBoss.Position || (player.Position + 2) == board.EvilBoss.Position || (player.Position - 2) == board.EvilBoss.Position || (player.Position + 3) == board.EvilBoss.Position || (player.Position - 3) == board.EvilBoss.Position || (player.Position + 7) == board.EvilBoss.Position || (player.Position - 7) == board.EvilBoss.Position || (player.Position + 8) == board.EvilBoss.Position || (player.Position - 8) == board.EvilBoss.Position || (player.Position + 9) == board.EvilBoss.Position || (player.Position - 9) == board.EvilBoss.Position || (player.Position + 10) == board.EvilBoss.Position || (player.Position - 10) == board.EvilBoss.Position || (player.Position + 11) == board.EvilBoss.Position || (player.Position - 11) == board.EvilBoss.Position || (player.Position + 12) == board.EvilBoss.Position || (player.Position - 12) == board.EvilBoss.Position || (player.Position + 15) == board.EvilBoss.Position || (player.Position - 15) == board.EvilBoss.Position || (player.Position + 16) == board.EvilBoss.Position || (player.Position - 16) == board.EvilBoss.Position || (player.Position + 17) == board.EvilBoss.Position || (player.Position - 17) == board.EvilBoss.Position || (player.Position + 18) == board.EvilBoss.Position || (player.Position - 18) == board.EvilBoss.Position || (player.Position + 19) == board.EvilBoss.Position || (player.Position - 19) == board.EvilBoss.Position || (player.Position + 20) == board.EvilBoss.Position || (player.Position - 20) == board.EvilBoss.Position || (player.Position + 21) == board.EvilBoss.Position || (player.Position - 21) == board.EvilBoss.Position || (player.Position + 24) == board.EvilBoss.Position || (player.Position - 24) == board.EvilBoss.Position || (player.Position + 25) == board.EvilBoss.Position || (player.Position - 25) == board.EvilBoss.Position || (player.Position + 26) == board.EvilBoss.Position || (player.Position - 26) == board.EvilBoss.Position || (player.Position + 27) == board.EvilBoss.Position || (player.Position - 27) == board.EvilBoss.Position || (player.Position + 28) == board.EvilBoss.Position || (player.Position - 28) == board.EvilBoss.Position || (player.Position + 29) == board.EvilBoss.Position || (player.Position - 29) == board.EvilBoss.Position || (player.Position + 30) == board.EvilBoss.Position || (player.Position - 30) == board.EvilBoss.Position)
                 {
@@ -121,10 +123,18 @@ namespace Melton
             {
                 Fehler_label.Text = "Jäger hat kein Zug mehr!";
             }
+            board.MoveOfWarrior = Warriormove;
+            board.MoveOfMage = Magemove;
+            board.MoveOfHunter = Huntermove;
+            board.MoveOfShaman = Shamanmove;
         }
         private void Ability_Button_Click(object sender, EventArgs e)
         {
-            if (player is Warrior)
+            Warriormove = board.MoveOfWarrior;
+            Magemove = board.MoveOfMage;
+            Huntermove = board.MoveOfHunter;
+            Shamanmove = board.MoveOfShaman;
+            if (player is Warrior && Warriormove == false && board.Krieger.Health > 0)
             {
                 if ((player.Position + 1) == board.EvilBoss.Position || (player.Position - 1) == board.EvilBoss.Position || (player.Position + 2) == board.EvilBoss.Position || (player.Position - 2) == board.EvilBoss.Position || (player.Position + 7) == board.EvilBoss.Position || (player.Position - 7) == board.EvilBoss.Position || (player.Position + 9) == board.EvilBoss.Position || (player.Position - 9) == board.EvilBoss.Position || (player.Position + 10) == board.EvilBoss.Position || (player.Position - 10) == board.EvilBoss.Position || (player.Position + 11) == board.EvilBoss.Position || (player.Position - 11) == board.EvilBoss.Position || (player.Position + 16) == board.EvilBoss.Position || (player.Position - 16) == board.EvilBoss.Position || (player.Position + 17) == board.EvilBoss.Position || (player.Position - 17) == board.EvilBoss.Position || (player.Position + 18) == board.EvilBoss.Position || (player.Position - 18) == board.EvilBoss.Position || (player.Position + 19) == board.EvilBoss.Position || (player.Position - 19) == board.EvilBoss.Position || (player.Position + 20) == board.EvilBoss.Position || (player.Position - 20) == board.EvilBoss.Position)
                 {
@@ -133,15 +143,15 @@ namespace Melton
                     Warriormove = true;
                 }
             }
-            if (player is Mage)
-            {
+            if (player is Mage && Magemove == false && board.Magier.Health > 0)
+                {
                 if ((player.Position + 1) == board.EvilBoss.Position || (player.Position - 1) == board.EvilBoss.Position || (player.Position + 2) == board.EvilBoss.Position || (player.Position - 2) == board.EvilBoss.Position || (player.Position + 7) == board.EvilBoss.Position || (player.Position - 7) == board.EvilBoss.Position || (player.Position + 9) == board.EvilBoss.Position || (player.Position - 9) == board.EvilBoss.Position || (player.Position + 10) == board.EvilBoss.Position || (player.Position - 10) == board.EvilBoss.Position || (player.Position + 11) == board.EvilBoss.Position || (player.Position - 11) == board.EvilBoss.Position || (player.Position + 16) == board.EvilBoss.Position || (player.Position - 16) == board.EvilBoss.Position || (player.Position + 17) == board.EvilBoss.Position || (player.Position - 17) == board.EvilBoss.Position || (player.Position + 18) == board.EvilBoss.Position || (player.Position - 18) == board.EvilBoss.Position || (player.Position + 19) == board.EvilBoss.Position || (player.Position - 19) == board.EvilBoss.Position || (player.Position + 20) == board.EvilBoss.Position || (player.Position - 20) == board.EvilBoss.Position)
                 {
                     board.Magier.CastFireball(board.EvilBoss);
                     Magemove = true;
                 }
             }
-            if (player is Hunter)
+            if (player is Hunter && Huntermove == false && board.Jaeger.Health > 0)
             {
                 if ((player.Position + 1) == board.EvilBoss.Position || (player.Position - 1) == board.EvilBoss.Position || (player.Position + 2) == board.EvilBoss.Position || (player.Position - 2) == board.EvilBoss.Position || (player.Position + 7) == board.EvilBoss.Position || (player.Position - 7) == board.EvilBoss.Position || (player.Position + 9) == board.EvilBoss.Position || (player.Position - 9) == board.EvilBoss.Position || (player.Position + 10) == board.EvilBoss.Position || (player.Position - 10) == board.EvilBoss.Position || (player.Position + 11) == board.EvilBoss.Position || (player.Position - 11) == board.EvilBoss.Position || (player.Position + 16) == board.EvilBoss.Position || (player.Position - 16) == board.EvilBoss.Position || (player.Position + 17) == board.EvilBoss.Position || (player.Position - 17) == board.EvilBoss.Position || (player.Position + 18) == board.EvilBoss.Position || (player.Position - 18) == board.EvilBoss.Position || (player.Position + 19) == board.EvilBoss.Position || (player.Position - 19) == board.EvilBoss.Position || (player.Position + 20) == board.EvilBoss.Position || (player.Position - 20) == board.EvilBoss.Position)
                 {
@@ -149,14 +159,18 @@ namespace Melton
                     Huntermove = true;
                 }
             }
-            if (player is Shaman)
+            if (player is Shaman && Shamanmove == false && board.Schamane.Health > 0)
             {
                 board.Schamane.DoHeal(board.EvilBoss);
-            } 
+            }
+            board.MoveOfWarrior = Warriormove;
+            board.MoveOfMage = Magemove;
+            board.MoveOfHunter = Huntermove;
+            board.MoveOfShaman = Shamanmove;
         }
         private void Ability_Button_MouseHover(object sender, EventArgs e)
         {
-            if(player is Warrior)
+            if (player is Warrior)
             {
                 toolTip1.Show("Hallo Krieger", Ability_Button);
             }
@@ -164,7 +178,7 @@ namespace Melton
             {
                 toolTip1.Show("Hallo Jaeger", Ability_Button);
             }
-            if(player is Hunter)
+            if(player is Mage)
             {
                 toolTip1.Show("Hallo Magier", Ability_Button);
             }
@@ -175,7 +189,34 @@ namespace Melton
         }
         private void Skip_Button_Click(object sender, EventArgs e)
         {
-            player.Health += 10;
+            Warriormove = board.MoveOfWarrior;
+            Magemove = board.MoveOfMage;
+            Huntermove = board.MoveOfHunter;
+            Shamanmove = board.MoveOfShaman;
+            if (player is Warrior && Warriormove == false && board.Krieger.Health > 0)
+            {
+                Warriormove = true;
+                player.Health += 10;
+            }
+            if (player is Hunter && Huntermove == false && board.Jaeger.Health > 0)
+            {
+                Huntermove = true;
+                player.Health += 10;
+            }
+            if (player is Mage && Magemove == false && board.Magier.Health > 0)
+            {
+                Magemove = true;
+                player.Health += 10;
+            }
+            if (player is Shaman && Shamanmove == false && board.Schamane.Health > 0)
+            {
+                Shamanmove = true;
+                player.Health += 10;
+            }
+            board.MoveOfWarrior = Warriormove;
+            board.MoveOfMage = Magemove;
+            board.MoveOfHunter = Huntermove;
+            board.MoveOfShaman = Shamanmove;
         }
 
         private void Skip_Button_MouseHover(object sender, EventArgs e)
