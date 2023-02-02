@@ -54,7 +54,7 @@
             this.ce_Label1.BackColor = System.Drawing.Color.Transparent;
             this.ce_Label1.Font = new System.Drawing.Font("Consolas", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ce_Label1.ForeColor = System.Drawing.Color.White;
-            this.ce_Label1.Location = new System.Drawing.Point(1136, 646);
+            this.ce_Label1.Location = new System.Drawing.Point(703, 437);
             this.ce_Label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ce_Label1.Name = "ce_Label1";
             this.ce_Label1.Size = new System.Drawing.Size(347, 75);
@@ -67,7 +67,7 @@
             this.exit_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("exit_button.BackgroundImage")));
             this.exit_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.exit_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exit_button.Location = new System.Drawing.Point(1323, 778);
+            this.exit_button.Location = new System.Drawing.Point(880, 586);
             this.exit_button.Margin = new System.Windows.Forms.Padding(2);
             this.exit_button.Name = "exit_button";
             this.exit_button.Size = new System.Drawing.Size(141, 54);
@@ -82,7 +82,7 @@
             this.restart_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("restart_button.BackgroundImage")));
             this.restart_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.restart_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.restart_button.Location = new System.Drawing.Point(1114, 778);
+            this.restart_button.Location = new System.Drawing.Point(701, 586);
             this.restart_button.Margin = new System.Windows.Forms.Padding(2);
             this.restart_button.Name = "restart_button";
             this.restart_button.Size = new System.Drawing.Size(145, 54);
