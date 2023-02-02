@@ -14,20 +14,19 @@ namespace Melton
 {
     public partial class EndMenu : Form
     {
-        string Label;
         Game game = (Game)Application.OpenForms["game"];
-        public string label
-        {
-            get { return Label; }
-            set { Label = value; }
-        }
-        public EndMenu()
+        public EndMenu(string Labeltext)
         {
             InitializeComponent();
-            ce_Label1.Text = label;
             ce_Label1.Parent = pictureBox1;
-            ce_Label1.Parent = pictureBox1;
+            ce_Label1.Text = Labeltext;
+            restart_button.Parent = pictureBox1;
+            exit_button.Parent = pictureBox1;
             game.Hide();
+        }
+        private void exit_button_Click(object sender, EventArgs e)
+        {
+            game.Close();
         }
     }
 }

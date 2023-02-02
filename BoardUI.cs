@@ -21,6 +21,7 @@ namespace Melton
         Game game = (Game)Application.OpenForms["game"];
         Eigenschaften eigenschaften;
         Actions action;
+        EndMenu end;
         Button btn = new Button();
         Button btndragclass;
         Button btndropclass;
@@ -438,16 +439,14 @@ namespace Melton
             }
             if (EvilBoss.Health <= 0)
             {
-                EndMenu end = new EndMenu();
+                end = new EndMenu("You Won");
                 end.TopMost = true;
-                end.label = "You Won";
                 end.Show();
             }
             else if (Krieger.Health <= 0 && Jaeger.Health <= 0 && Magier.Health <= 0 && Schamane.Health <= 0)
             {
-                EndMenu end = new EndMenu();
+                end = new EndMenu("You Lost");
                 end.TopMost = true;
-                end.label = "You Lost";
                 end.Show();
             }
         }
