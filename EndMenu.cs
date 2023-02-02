@@ -14,24 +14,19 @@ namespace Melton
 {
     public partial class EndMenu : Form
     {
+        string Label;
         Game game = (Game)Application.OpenForms["game"];
-        BoardUI board;
+        public string label
+        {
+            get { return Label; }
+            set { Label = value; }
+        }
         public EndMenu()
         {
             InitializeComponent();
-            
-
+            ce_Label1.Text = label;
             ce_Label1.Parent = pictureBox1;
             ce_Label1.Parent = pictureBox1;
-
-            if (board.EvilBoss.Health <= 0)
-            {
-                ce_Label1.Text = "You Won";
-            }
-            else if (board.Krieger.Health <= 0 && board.Jaeger.Health <= 0 && board.Magier.Health <= 0 && board.Schamane.Health <= 0)
-            {
-                ce_Label1.Text = "You Lost";
-            }
             game.Hide();
         }
     }

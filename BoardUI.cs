@@ -436,16 +436,18 @@ namespace Melton
                     MoveOfShaman = false;
                 }
             }
-            if(EvilBoss.Health <= 0)
+            if (EvilBoss.Health <= 0)
             {
                 EndMenu end = new EndMenu();
                 end.TopMost = true;
+                end.label = "You Won";
                 end.Show();
             }
-            else if(Krieger.Health <= 0 && Jaeger.Health <= 0 && Magier.Health <= 0 && Schamane.Health <= 0)
+            else if (Krieger.Health <= 0 && Jaeger.Health <= 0 && Magier.Health <= 0 && Schamane.Health <= 0)
             {
                 EndMenu end = new EndMenu();
                 end.TopMost = true;
+                end.label = "You Lost";
                 end.Show();
             }
         }
