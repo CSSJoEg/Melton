@@ -13,7 +13,6 @@ namespace Melton
 {
     public partial class LoadingScreen : Form
     {
-        public Form parent { get; set; }
         Game game = (Game)Application.OpenForms["game"];
         public LoadingScreen()
         {
