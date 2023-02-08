@@ -58,14 +58,19 @@ namespace Melton
         public Settings(Form mdiParent)
         {
             InitializeComponent();
+            if(Nature != null)
+                mdiParent.BackColor = Nature[ThemeColor.Primary];
             parent = mdiParent;
         }
 		private void Light_Theme_CheckedChanged_1(object sender, EventArgs e)
 		{
             if (Light_Theme.Checked)
             {
-                ChangeTheme(Light[ThemeColor.Primary], Light[ThemeColor.Secondary], Light[ThemeColor.Tertiary]);
-                ChangeTextColor(Light[ThemeColor.Text]);
+                if (Nature != null)
+                {
+                    ChangeTheme(Nature[ThemeColor.Primary], Nature[ThemeColor.Secondary], Nature[ThemeColor.Tertiary]);
+                    ChangeTextColor(Nature[ThemeColor.Text]);
+                }
             }
         }
 	}
