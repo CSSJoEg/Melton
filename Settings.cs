@@ -41,6 +41,7 @@ namespace Melton
         {
             foreach (Control l in this.Controls)
             {
+                l.ForeColor = textcolor;
                 if (l.GetType() == typeof(Label))
                     l.ForeColor = textcolor;
             }
@@ -91,6 +92,8 @@ namespace Melton
             {
                 ChangeTheme(Sky[ThemeColor.Primary], Sky[ThemeColor.Secondary], Sky[ThemeColor.Tertiary]);
                 DarkMode.Checked = false;
+                LightText.Checked = false;
+                DarkText.Checked = false;
             }
             else if (!NatureTheme.Checked && !BloodTheme.Checked)
             {
@@ -107,6 +110,8 @@ namespace Melton
             {
                 ChangeTheme(Nature[ThemeColor.Primary], Nature[ThemeColor.Secondary], Nature[ThemeColor.Tertiary]);
                 DarkMode.Checked = false;
+                LightText.Checked = false;
+                DarkText.Checked = false;
             }
             else if (!SkyTheme.Checked && !BloodTheme.Checked)
             {
@@ -123,6 +128,8 @@ namespace Melton
             {
                 ChangeTheme(Blood[ThemeColor.Primary], Blood[ThemeColor.Secondary], Blood[ThemeColor.Tertiary]);
                 DarkMode.Checked = false;
+                LightText.Checked = false;
+                DarkText.Checked = false;
             }
             else if (!SkyTheme.Checked && !NatureTheme.Checked)
             {
