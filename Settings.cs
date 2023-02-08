@@ -15,65 +15,172 @@ namespace Melton
     public partial class Settings : Form
     {
         Game game = (Game)Application.OpenForms["game"];
-        Dictionary<ThemeColor, Color> Light;
+        Dictionary<ThemeColor, Color> Sky;
+        Dictionary<ThemeColor, Color> Blood;
         Dictionary<ThemeColor, Color> Nature;
         Dictionary<ThemeColor, Color> Dark;
+        Dictionary<ThemeColor, Color> Text;
         enum ThemeColor
         {
             Primary,
             Secondary,
             Tertiary,
-            Text
+            LightText,
+            DarkText
         }
         void ChangeTheme(Color primaryColor, Color secondaryColor, Color tertiaryColor)
         {
             this.BackColor = primaryColor;
-            foreach(Control c in this.Controls)
-			{
+            foreach (Control c in this.Controls)
+            {
                 c.BackColor = secondaryColor;
                 c.ForeColor = tertiaryColor;
             }
         }
         void ChangeTextColor(Color textcolor)
-		{
-            foreach(Control l in this.Controls)
-			{
-                if (l.GetType() == typeof(Label))      
+        {
+            foreach (Control l in this.Controls)
+            {
+                if (l.GetType() == typeof(Label))
                     l.ForeColor = textcolor;
+            }
+        }
+        void ColorReset()
+        {
+            foreach (Control c in this.Controls)
+            {
+                c.BackColor = DefaultBackColor;
+                c.ForeColor = DefaultForeColor;
+                if (c.GetType() == typeof(Label))
+                    c.ForeColor = DefaultForeColor;
             }
         }
         public Form parent { get; set; }
         public Settings(Form mdiParent)
         {
             InitializeComponent();
-            Light = new Dictionary<ThemeColor, Color>() {
-            { ThemeColor.Primary, Color.WhiteSmoke },
-            { ThemeColor.Secondary, Color.Silver },
-            { ThemeColor.Tertiary, Color.White },
-            { ThemeColor.Text, Color.Black }
+            Sky = new Dictionary<ThemeColor, Color>() {
+            { ThemeColor.Primary, Color.FromArgb(114, 134, 211) },
+            { ThemeColor.Secondary, Color.FromArgb(142, 167, 233) },
+            { ThemeColor.Tertiary, Color.FromArgb(229, 224, 255) },
+            };
+            Blood = new Dictionary<ThemeColor, Color>() {
+            { ThemeColor.Primary, Color.FromArgb(99, 6, 6) },
+            { ThemeColor.Secondary, Color.FromArgb(137, 15, 13) },
+            { ThemeColor.Tertiary, Color.FromArgb(232, 58, 20) },
             };
             Nature = new Dictionary<ThemeColor, Color>() {
-            { ThemeColor.Primary, Color.DarkSeaGreen },
-            { ThemeColor.Secondary, Color.AliceBlue },
-            { ThemeColor.Tertiary, Color.Honeydew },
-            { ThemeColor.Text, Color.Black }
+            { ThemeColor.Primary, Color.FromArgb(55, 146, 55) },
+            { ThemeColor.Secondary, Color.FromArgb(84, 180, 53) },
+            { ThemeColor.Tertiary, Color.FromArgb(130, 205, 71) },
             };
             Dark = new Dictionary<ThemeColor, Color>() {
-            { ThemeColor.Primary, Color.DimGray },
+            { ThemeColor.Primary, Color.DarkGray },
             { ThemeColor.Secondary, Color.DimGray },
-            { ThemeColor.Tertiary, Color.Black },
-            { ThemeColor.Text, Color.White }
+            { ThemeColor.Tertiary, Color.Red },
+            };
+            Text = new Dictionary<ThemeColor, Color>() {
+            { ThemeColor.LightText, Color.White },
+            { ThemeColor.DarkText, Color.Black },
             };
             parent = mdiParent;
         }
-		private void Light_Theme_CheckedChanged_1(object sender, EventArgs e)
-		{
-            if (Light_Theme.Checked)
+        private void SkyTheme_CheckedChanged(object sender, EventArgs e)
+        {
+            if (SkyTheme.Checked)
             {
-                ChangeTheme(Nature[ThemeColor.Primary], Nature[ThemeColor.Secondary], Nature[ThemeColor.Tertiary]);
-                ChangeTextColor(Dark[ThemeColor.Text]);
+                ChangeTheme(Sky[ThemeColor.Primary], Sky[ThemeColor.Secondary], Sky[ThemeColor.Tertiary]);
+                DarkMode.Checked = false;
+            }
+            else if (!NatureTheme.Checked && !BloodTheme.Checked)
+            {
+                ColorReset();
+            }
+            else
+            {
+                SkyTheme.Checked = false;
             }
         }
-	}
-}
+        private void NatureTheme_CheckedChanged(object sender, EventArgs e)
+        {
+            if (NatureTheme.Checked)
+            {
+                ChangeTheme(Nature[ThemeColor.Primary], Nature[ThemeColor.Secondary], Nature[ThemeColor.Tertiary]);
+                DarkMode.Checked = false;
+            }
+            else if (!SkyTheme.Checked && !BloodTheme.Checked)
+            {
+                ColorReset();
+            }
+            else
+            {
+                NatureTheme.Checked = false;
+            }
+        }
+        private void BloodTheme_CheckedChanged(object sender, EventArgs e)
+        {
+            if (BloodTheme.Checked)
+            {
+                ChangeTheme(Blood[ThemeColor.Primary], Blood[ThemeColor.Secondary], Blood[ThemeColor.Tertiary]);
+                DarkMode.Checked = false;
+            }
+            else if (!SkyTheme.Checked && !NatureTheme.Checked)
+            {
+                ColorReset();
+            }
+            else
+            {
+                BloodTheme.Checked = false;
+            }
+        }
+        private void DarkMode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (DarkMode.Checked)
+            {
+                ChangeTheme(Dark[ThemeColor.Primary], Dark[ThemeColor.Secondary], Dark[ThemeColor.Tertiary]);
+                SkyTheme.Checked = false;
+                NatureTheme.Checked = false;
+                BloodTheme.Checked = false;
+            }
+            else if (!SkyTheme.Checked && !NatureTheme.Checked && !BloodTheme.Checked)
+            {
+                ColorReset();
+            }
+            else
+            {
+                DarkMode.Checked = false;
+            }
+        }
+        private void LightText_CheckedChanged(object sender, EventArgs e)
+        {
+            if (LightText.Checked)
+            {
+                ChangeTextColor(Text[ThemeColor.LightText]);
+            }
+            else if (!DarkText.Checked)
+            {
+                ColorReset();
+            }
+            else
+            {
+                LightText.Checked = false;
+            }
+        }
 
+        private void DarkText_CheckedChanged(object sender, EventArgs e)
+        {
+            if (DarkText.Checked)
+            {
+                ChangeTextColor(Text[ThemeColor.DarkText]);
+            }
+            else if (!LightText.Checked)
+            {
+                ColorReset();
+            }
+            else
+            {
+                DarkText.Checked = false;
+            }
+        }
+    }
+}
