@@ -29,7 +29,7 @@ namespace Melton
             titelbild.Region = rg;
             parent = mdiParent;
         }
-        private void start_btn_Click(object sender, EventArgs    e)
+        private void start_btn_Click(object sender, EventArgs e)
         {
             this.Hide();
             Board = new BoardUI(parent);

@@ -26,40 +26,35 @@ namespace Melton
         }
         void ChangeTheme(Color primaryColor, Color secondaryColor, Color tertiaryColor)
         {
-            Light = new Dictionary<ThemeColor, Color>() {
-            { ThemeColor.Primary, Color.WhiteSmoke },
-            { ThemeColor.Secondary, Color.Silver },
-            { ThemeColor.Tertiary, Color.White },
-            };
-            Nature = new Dictionary<ThemeColor, Color>() {
-            { ThemeColor.Primary, Color.DarkSeaGreen },
-            { ThemeColor.Secondary, Color.AliceBlue },
-            { ThemeColor.Tertiary, Color.Honeydew },
-            };
-            Dark = new Dictionary<ThemeColor, Color>() {
-            { ThemeColor.Primary, Color.DimGray },
-            { ThemeColor.Secondary, Color.DimGray },
-            { ThemeColor.Tertiary, Color.Black },
-            };
+            
+           this.BackColor = primaryColor;
         }
         void ChangeTextColor(Color textcolor)
 		{
-            Light = new Dictionary<ThemeColor, Color>() {
-            { ThemeColor.Text, Color.Black }
-            };
-            Nature = new Dictionary<ThemeColor, Color>() {
-            { ThemeColor.Text, Color.Black }
-            };
-            Dark = new Dictionary<ThemeColor, Color>() {
-            { ThemeColor.Text, Color.White }
-            };
+           this.ForeColor = textcolor;
         }
         public Form parent { get; set; }
         public Settings(Form mdiParent)
         {
             InitializeComponent();
-            if(Nature != null)
-                mdiParent.BackColor = Nature[ThemeColor.Primary];
+            Light = new Dictionary<ThemeColor, Color>() {
+            { ThemeColor.Primary, Color.WhiteSmoke },
+            { ThemeColor.Secondary, Color.Silver },
+            { ThemeColor.Tertiary, Color.White },
+            { ThemeColor.Text, Color.Black }
+            };
+            Nature = new Dictionary<ThemeColor, Color>() {
+            { ThemeColor.Primary, Color.DarkSeaGreen },
+            { ThemeColor.Secondary, Color.AliceBlue },
+            { ThemeColor.Tertiary, Color.Honeydew },
+            { ThemeColor.Text, Color.Black }
+            };
+            Dark = new Dictionary<ThemeColor, Color>() {
+            { ThemeColor.Primary, Color.DimGray },
+            { ThemeColor.Secondary, Color.DimGray },
+            { ThemeColor.Tertiary, Color.Black },
+            { ThemeColor.Text, Color.White }
+            };
             parent = mdiParent;
         }
 		private void Light_Theme_CheckedChanged_1(object sender, EventArgs e)
