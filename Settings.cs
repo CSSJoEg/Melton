@@ -19,7 +19,7 @@ namespace Melton
         Dictionary<ThemeColor, Color> Blood;
         Dictionary<ThemeColor, Color> Nature;
         Dictionary<ThemeColor, Color> Dark;
-        Dictionary<ThemeColor, Color> Text;
+        Dictionary<ThemeColor, Color> TextColor;
         enum ThemeColor
         {
             Primary,
@@ -80,7 +80,7 @@ namespace Melton
             { ThemeColor.Secondary, Color.DimGray },
             { ThemeColor.Tertiary, Color.Red },
             };
-            Text = new Dictionary<ThemeColor, Color>() {
+            TextColor = new Dictionary<ThemeColor, Color>() {
             { ThemeColor.LightText, Color.White },
             { ThemeColor.DarkText, Color.Black },
             };
@@ -162,7 +162,7 @@ namespace Melton
         {
             if (LightText.Checked)
             {
-                ChangeTextColor(Text[ThemeColor.LightText]);
+                ChangeTextColor(TextColor[ThemeColor.LightText]);
             }
             else if (!DarkText.Checked)
             {
@@ -178,7 +178,7 @@ namespace Melton
         {
             if (DarkText.Checked)
             {
-                ChangeTextColor(Text[ThemeColor.DarkText]);
+                ChangeTextColor(TextColor[ThemeColor.DarkText]);
             }
             else if (!LightText.Checked)
             {
