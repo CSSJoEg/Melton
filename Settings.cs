@@ -14,6 +14,7 @@ namespace Melton
 {
     public partial class Settings : Form
     {
+        Game game = (Game)Application.OpenForms["game"];
         Dictionary<ThemeColor, Color> Light;
         Dictionary<ThemeColor, Color> Nature;
         Dictionary<ThemeColor, Color> Dark;
@@ -26,12 +27,20 @@ namespace Melton
         }
         void ChangeTheme(Color primaryColor, Color secondaryColor, Color tertiaryColor)
         {
-            
-           this.BackColor = primaryColor;
+            this.BackColor = primaryColor;
+            foreach(Control c in this.Controls)
+			{
+                c.BackColor = secondaryColor;
+                c.ForeColor = tertiaryColor;
+            }
         }
         void ChangeTextColor(Color textcolor)
 		{
-           this.ForeColor = textcolor;
+            foreach(Control l in this.Controls)
+			{
+                if (l.GetType() == typeof(Label))      
+                    l.ForeColor = textcolor;
+            }
         }
         public Form parent { get; set; }
         public Settings(Form mdiParent)
@@ -61,11 +70,8 @@ namespace Melton
 		{
             if (Light_Theme.Checked)
             {
-                if (Nature != null)
-                {
-                    ChangeTheme(Nature[ThemeColor.Primary], Nature[ThemeColor.Secondary], Nature[ThemeColor.Tertiary]);
-                    ChangeTextColor(Nature[ThemeColor.Text]);
-                }
+                ChangeTheme(Nature[ThemeColor.Primary], Nature[ThemeColor.Secondary], Nature[ThemeColor.Tertiary]);
+                ChangeTextColor(Dark[ThemeColor.Text]);
             }
         }
 	}
