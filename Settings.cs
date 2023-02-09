@@ -71,13 +71,13 @@ namespace Melton
             { ThemeColor.Tertiary, Color.FromArgb(232, 58, 20) },
             };
             Nature = new Dictionary<ThemeColor, Color>() {
-            { ThemeColor.Primary, Color.FromArgb(55, 146, 55) },
-            { ThemeColor.Secondary, Color.FromArgb(84, 180, 53) },
+            { ThemeColor.Primary, Color.DarkSlateGray },
+            { ThemeColor.Secondary, Color.FromArgb(55, 146, 55) },
             { ThemeColor.Tertiary, Color.FromArgb(130, 205, 71) },
             };
             Dark = new Dictionary<ThemeColor, Color>() {
-            { ThemeColor.Primary, Color.DarkGray },
-            { ThemeColor.Secondary, Color.DimGray },
+            { ThemeColor.Primary, Color.Black },
+            { ThemeColor.Secondary, Color.DarkGray },
             { ThemeColor.Tertiary, Color.Red },
             };
             TextColor = new Dictionary<ThemeColor, Color>() {
@@ -189,5 +189,9 @@ namespace Melton
                 DarkText.Checked = false;
             }
         }
-    }
+		private void change_layout_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
