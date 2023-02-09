@@ -22,6 +22,10 @@ namespace Melton
 			cW.AddEllipse(0, 0, pictureWarrior.Width - 1, pictureWarrior.Height - 1);
 			Region rgW = new Region(cW);
 			pictureWarrior.Region = rgW;
+
+
+			// Fehlerhaft
+
 			//System.Drawing.Drawing2D.GraphicsPath cM = new System.Drawing.Drawing2D.GraphicsPath();
 			//cW.AddEllipse(0, 0, pictureMage.Width - 2, pictureMage.Height - 2);
 			//Region rgM = new Region(cM);
@@ -46,6 +50,9 @@ namespace Melton
 			//cW.AddEllipse(0, 0, pictureHunter.Width - 2, pictureHunter.Height - 2);
 			//Region rgH = new Region(cH);
 			//pictureHunter.Region = rgH;
+
+
+
 		}
 	}
 }
