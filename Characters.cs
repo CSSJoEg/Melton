@@ -23,13 +23,10 @@ namespace Melton
 			Region rgW = new Region(cW);
 			pictureWarrior.Region = rgW;
 
-
-			// Fehlerhaft
-
-			//System.Drawing.Drawing2D.GraphicsPath cM = new System.Drawing.Drawing2D.GraphicsPath();
-			//cW.AddEllipse(0, 0, pictureMage.Width - 2, pictureMage.Height - 2);
-			//Region rgM = new Region(cM);
-			//pictureMage.Region = rgM;
+			System.Drawing.Drawing2D.GraphicsPath cM = new System.Drawing.Drawing2D.GraphicsPath();
+			cW.AddEllipse(0, 0, pictureMage.Width - 1, pictureMage.Height - 1);
+			Region rgM = new Region(cM);
+			pictureMage.Region = rgM;
 			//System.Drawing.Drawing2D.GraphicsPath cS = new System.Drawing.Drawing2D.GraphicsPath();
 			//cW.AddEllipse(0, 0, pictureShaman.Width - 2, pictureShaman.Height - 2);
 			//Region rgS = new Region(cS);

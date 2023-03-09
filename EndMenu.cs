@@ -28,5 +28,10 @@ namespace Melton
         {
             game.Close();
         }
+
+        private void restart_button_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }

@@ -89,6 +89,7 @@
             this.restart_button.TabIndex = 5;
             this.restart_button.Text = "Restart";
             this.restart_button.UseVisualStyleBackColor = false;
+            this.restart_button.Click += new System.EventHandler(this.restart_button_Click);
             // 
             // EndMenu
             // 
